@@ -1,53 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Secure Hacks</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+<meta charset="UTF-8">
+<title>Secure Hacks - Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
 
-        h1 {
-            text-align: center;
-        }
+header {
+  background: #1e2a38;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
-        .category-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+h1 {
+  margin: 0;
+}
 
-        .category {
-            padding: 10px 20px;
-            margin: 0 10px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
 
-        .category:hover {
-            background-color: #0056b3;
-        }
-    </style>
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 10px;
+}
+
+.card p {
+  color: #555;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.card a:hover {
+  background: #0056b3;
+}
+</style>
 </head>
 <body>
-    <h1>Secure Hacks</h1>
-    <div class="category-container">
-        <a href="checklist_wapen.html" class="category">Web Application Pentest Checklist</a>
-		<a href="checklist_expen.html" class="category">External Network Pentest Checklist</a>
-	    <a href="checklist_mapen.html" class="category">Mobile Application Pentest Checklist</a>
-		<a href="checklist_aiml.html" class="category">AI/ML Network Pentest Checklist</a>
-	</div>	
-	
-	<!--<div class="category-container">
-		<a href="/graphql_testing.html" class="category">GraphQL Testing</a>
-		<a href="/scanny_assist_burp.html" class="category">Scanny Assist Burp Plugin</a>
-	</div>-->
-	
-	
+
+<header>
+  <h1>Secure Hacks</h1>
+  <p>Your Security Testing Hub</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h3>Web Application Pentest Checklist</h3>
+    <p>Comprehensive guide for web application penetration testing.</p>
+    <a href="checklist_wapen.html">Open</a>
+  </div>
+
+  <div class="card">
+    <h3>Mobile Application Pentest Checklist</h3>
+    <p>Test Android & iOS applications with a structured approach.</p>
+    <a href="checklist_mapen.html">Open</a>
+  </div>
+
+  <div class="card">
+    <h3>External Network Pentest Checklist</h3>
+    <p>Steps and best practices for external network assessments.</p>
+    <a href="checklist_expen.html">Open</a>
+  </div>
+
+  <div class="card">
+    <h3>AI/ML Security Testing</h3>
+    <p>Security considerations for AI and machine learning systems.</p>
+    <a href="checklist_aiml.html">Open</a>
+  </div>
+
+  <div class="card">
+    <h3>Pentesting Notes</h3>
+    <p>Quick references, commands, and tips for testers.</p>
+    <a href="notes.html">Open</a>
+  </div>
+
+  <div class="card">
+    <h3>Tools & Resources</h3>
+    <p>Links to essential pentesting tools and security resources.</p>
+    <a href="resources.html">Open</a>
+  </div>
+</div>
+
 </body>
 </html>
