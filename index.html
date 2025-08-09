@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Secure Hacks - Home</title>
+<title>Secure Hacks</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
@@ -12,6 +12,26 @@ body {
   padding: 0;
 }
 
+.hidden {
+  display: none;
+}
+
+/* Login Screen */
+.login-container {
+  text-align: center;
+  padding-top: 100px;
+}
+input {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Header */
 header {
   background: #1e2a38;
   color: white;
@@ -19,10 +39,7 @@ header {
   text-align: center;
 }
 
-h1 {
-  margin: 0;
-}
-
+/* Cards */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -32,84 +49,91 @@ h1 {
 
 .card {
   display: block;
-  text-decoration: none; /* removes underline */
-  color: inherit; /* keeps normal text color */
+  text-decoration: none;
+  color: inherit;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  text-decoration: none; /* make sure hover doesn't underline */
-}
-
-
-.card h3 {
-  margin-top: 10px;
-}
-
-.card p {
-  color: #555;
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.card a:hover {
-  background: #0056b3;
 }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Secure Hacks</h1>
-  <p>This is a one stop shop for all things related to security - checklists, war stories, methodologies etc</p>
-</header>
-
-<div class="container">
-  <a href="checklist_wapen.html" class="card">
-    <h3>Web Application Pentest Checklist</h3>
-    <p>Comprehensive guide for web application penetration testing.</p>
-  </a>
-
-  <a href="checklist_mapen.html" class="card">
-    <h3>Mobile Application Pentest Checklist</h3>
-    <p>Comprehensive guide for mobile application penetration testing.</p>
-  </a>
-
-  <a href="checklist_expen.html" class="card">
-    <h3>External Network Pentest Checklist</h3>
-    <p>Comprehensive guide for external penetration testing.</p>
-  </a>
-
-  <a href="checklist_aiml.html" class="card">
-    <h3>AI/ML Security Testing</h3>
-    <p>Security considerations for AI and machine learning systems.</p>
-  </a>
-
-  <a href="notes.html" class="card">
-    <h3>Pentesting Notes</h3>
-    <p>Quick references, commands, and tips for testers.</p>
-  </a>
-
-  <a href="resources.html" class="card">
-    <h3>Tools & Resources</h3>
-    <p>Links to essential pentesting tools and security resources.</p>
-  </a>
+<!-- Login Screen -->
+<div id="login" class="login-container">
+  <h2>Secure Hacks - Access Restricted</h2>
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="checkPassword()">Login</button>
 </div>
 
+<!-- Main Content -->
+<div id="main" class="hidden">
+  <header>
+    <h1>Secure Hacks</h1>
+    <p>Your Security Testing Hub</p>
+  </header>
+
+  <div class="container">
+    <a href="checklist_wapen.html" class="card">
+      <h3>Web Application Pentest Checklist</h3>
+      <p>Comprehensive guide for web application penetration testing.</p>
+    </a>
+
+    <a href="checklist_mapen.html" class="card">
+      <h3>Mobile Application Pentest Checklist</h3>
+      <p>Test Android & iOS applications with a structured approach.</p>
+    </a>
+
+    <a href="checklist_expen.html" class="card">
+      <h3>External Network Pentest Checklist</h3>
+      <p>Steps and best practices for external network assessments.</p>
+    </a>
+
+    <a href="checklist_aiml.html" class="card">
+      <h3>AI/ML Security Testing</h3>
+      <p>Security considerations for AI and machine learning systems.</p>
+    </a>
+
+    <a href="notes.html" class="card">
+      <h3>Pentesting Notes</h3>
+      <p>Quick references, commands, and tips for testers.</p>
+    </a>
+
+    <a href="resources.html" class="card">
+      <h3>Tools & Resources</h3>
+      <p>Links to essential pentesting tools and security resources.</p>
+    </a>
+  </div>
+</div>
+
+<script>
+// SHA-256 hash of your password (generate separately)
+const passwordHash = "3481e11c42cffd1eb58a54a84b8e0b995c62255a26632bd256d6c6fb30621527"; // Replace with your hash
+
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function checkPassword() {
+  const pass = document.getElementById("password").value;
+  const hash = await sha256(pass);
+  if (hash === passwordHash) {
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("main").classList.remove("hidden");
+  } else {
+    alert("Incorrect password!");
+  }
+}
+</script>
 
 </body>
 </html>
