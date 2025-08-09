@@ -65,13 +65,6 @@ header {
 </head>
 <body>
 
-<!-- Login Screen -->
-<div id="login" class="login-container">
-  <h2>Secure Hacks - Access Restricted</h2>
-  <input type="password" id="password" placeholder="Enter password">
-  <button onclick="checkPassword()">Login</button>
-</div>
-
 <!-- Main Content -->
 <div id="main" class="hidden">
   <header>
@@ -111,29 +104,6 @@ header {
     </a>
   </div>
 </div>
-
-<script>
-// SHA-256 hash of your password (generate separately)
-const passwordHash = "3481e11c42cffd1eb58a54a84b8e0b995c62255a26632bd256d6c6fb30621527"; // Replace with your hash
-
-async function sha256(message) {
-  const msgBuffer = new TextEncoder().encode(message);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
-}
-
-async function checkPassword() {
-  const pass = document.getElementById("password").value;
-  const hash = await sha256(pass);
-  if (hash === passwordHash) {
-    document.getElementById("login").classList.add("hidden");
-    document.getElementById("main").classList.remove("hidden");
-  } else {
-    alert("Incorrect password!");
-  }
-}
-</script>
 
 </body>
 </html>
