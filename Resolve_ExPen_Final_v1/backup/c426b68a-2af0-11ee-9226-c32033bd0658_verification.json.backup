@@ -1,1 +1,0 @@
-{"default_url":null,"content":{"state":3,"taskInstructions":"<h2>Instructions</h2><br>Attempt to login to Digital Ocean and determine if MFA is enabled.<br>","references":[],"isTaskInstructionsVisible":true,"isCommentMandatory":false,"fields":[],"masterFinding":null}}

@@ -1,1 +1,0 @@
-{"default_url":null,"content":{"state":3,"taskInstructions":"<h2>Instructions</h2><br>This scope should be used for any black box tests. If the client has provided in-scope IPs and domains this section is optional.<br>","references":[],"isTaskInstructionsVisible":true,"isCommentMandatory":false,"fields":[],"masterFinding":null}}

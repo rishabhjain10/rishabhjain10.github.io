@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Checklist App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f7fb;
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 320px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-controls {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 6px;
+}
+
+.sidebar-controls button {
+  padding: 4px 8px;
+  font-size: 0.85em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #f0f0f0;
+}
+.sidebar-controls button:hover {
+  background: #e0e0e0;
+}
+
+.sidebar-search {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+}
+.sidebar-search input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Scrollable list */
+#categoryList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Categories & tasks */
+.category {
+  font-weight: bold;
+  background: #f9f9f9;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+.category:hover {
+  background: #eef3ff;
+}
+
+.task-list {
+  display: none;
+  background: #fff;
+}
+
+.task {
+  padding: 6px 24px;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+.task:hover {
+  background: #eef3ff;
+}
+
+.active {
+  background: #dce6ff;
+}
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.accordion {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.accordion-header {
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+.accordion-content {
+  padding: 12px;
+  display: none;
+}
+.accordion-content code, .accordion-content pre {
+  background: #f4f4f4;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">MaPen Checklist</div>
+  <div class="sidebar-controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="searchInput" placeholder="Search...">
+  </div>
+  <div id="categoryList"></div>
+</div>
+
+<div class="content">
+  <h2 id="taskTitle">Select a task</h2>
+  <div id="taskContent">Select a task from the left to see details here.</div>
+</div>
+
+<script>
+// Fields to hide from right panel
+const hiddenFields = ["uid", "id", "severityId", "sourceIdentifier"];
+
+// Human-readable names for keys
+const displayNames = {
+  verificationInstructions: "Verification Instructions",
+  businessImpact: "Business Impact",
+  remediationInstructions: "Remediation Instructions",
+  description: "Description",
+  references: "References",
+  instructions: "Instructions",
+  name: "Vulnerability Name",
+  exploitInstructions: "Exploit Instructions"
+};
+
+let checklistData = [];
+
+function renderSidebar(filter = "") {
+  const list = document.getElementById('categoryList');
+  list.innerHTML = "";
+  checklistData.forEach(checklist => {
+    if (Array.isArray(checklist.categories)) {
+      checklist.categories.forEach(cat => {
+        // Filter tasks by search
+        let matchingTasks = [];
+        if (Array.isArray(cat.tasks)) {
+          matchingTasks = cat.tasks.filter(task =>
+            task.name.toLowerCase().includes(filter) ||
+            cat.name.toLowerCase().includes(filter)
+          );
+        }
+
+        // Only show category if it or any of its tasks match
+        if (filter === "" || matchingTasks.length > 0) {
+          const catEl = document.createElement('div');
+          catEl.className = 'category';
+          catEl.textContent = cat.name;
+          catEl.onclick = () => {
+            const taskListEl = catEl.nextElementSibling;
+            taskListEl.style.display =
+              taskListEl.style.display === 'block' ? 'none' : 'block';
+          };
+          list.appendChild(catEl);
+
+          const taskListEl = document.createElement('div');
+          taskListEl.className = 'task-list';
+          matchingTasks.forEach(task => {
+            const taskEl = document.createElement('div');
+            taskEl.className = 'task';
+            taskEl.textContent = task.name;
+            taskEl.onclick = () => loadTask(task);
+            taskListEl.appendChild(taskEl);
+          });
+          list.appendChild(taskListEl);
+        }
+      });
+    }
+  });
+}
+
+
+function expandAll() {
+  document.querySelectorAll('.task-list').forEach(list => list.style.display = 'block');
+}
+
+function collapseAll() {
+  document.querySelectorAll('.task-list').forEach(list => list.style.display = 'none');
+}
+
+function loadTask(task) {
+  document.getElementById('taskTitle').textContent = task.name;
+  const content = document.getElementById('taskContent');
+  let html = "";
+
+  // Instructions (if available)
+  if (task.instructions && !hiddenFields.includes("instructions")) {
+    html += createAccordion(displayNames.instructions || "instructions", task.instructions);
+  }
+
+  // Finding template fields
+  if (task.findingTemplate) {
+    for (const [key, val] of Object.entries(task.findingTemplate)) {
+      if (!hiddenFields.includes(key) && val) {
+        const displayName = displayNames[key] || key;
+        html += createAccordion(displayName, val);
+      }
+    }
+  }
+
+  content.innerHTML = html || "No details available.";
+  bindAccordions();
+}
+
+function createAccordion(title, content) {
+  return `<div class="accordion">
+    <div class="accordion-header">${title}</div>
+    <div class="accordion-content">${content}</div>
+  </div>`;
+}
+
+function bindAccordions() {
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.onclick = () => {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    };
+  });
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  renderSidebar(e.target.value.toLowerCase());
+  renderSidebar(e.target.value.toLowerCase());
+  renderSidebar(e.target.value.toLowerCase());
+});
+
+// Load JSON from file in same directory
+fetch('checklist_mapen.json')
+  .then(response => response.json())
+  .then(json => {
+    checklistData = json;
+    renderSidebar();
+  })
+  .catch(err => {
+    console.error("Error loading checklist JSON:", err);
+  });
+</script>
+
+</body>
+</html>
